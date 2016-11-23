@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="8105cf10af232721ecb0ed06a57afb90" resname="header.register">
+        <source>header.register</source>
+        <target>header.register</target>
+      </trans-unit>
+      <trans-unit id="e5643f8a9f067d1a42c18a78ed0b469d" resname="form.firstName">
+        <source>form.firstName</source>
+        <target>form.firstName</target>
+      </trans-unit>
+      <trans-unit id="90c6625c02db5919924fb36f0e9efb63" resname="form.lastName">
+        <source>form.lastName</source>
+        <target>form.lastName</target>
+      </trans-unit>
+      <trans-unit id="a57695b8623648d8cff7d5f111466c02" resname="form.birthDate">
+        <source>form.birthDate</source>
+        <target>form.birthDate</target>
+      </trans-unit>
+      <trans-unit id="01b234fe1a185c3a9f3804f284fcc8e2" resname="form.email">
+        <source>form.email</source>
+        <target>form.email</target>
+      </trans-unit>
+      <trans-unit id="cf3bef5d3a0668ac3613d0a3de82180a" resname="cgu">
+        <source>cgu</source>
+        <target>cgu</target>
+      </trans-unit>
+      <trans-unit id="4abe77c201ff11663ccdf52fd6ecea86" resname="accept">
+        <source>accept</source>
+        <target>accept</target>
+      </trans-unit>
+      <trans-unit id="f71197a4e184b581df9cb4fc27955b79" resname="registration.submit">
+        <source>registration.submit</source>
+        <target>registration.submit</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
