@@ -14,9 +14,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Applicant
 {
-    const STATUS_PENDING = 'pending';
     const STATUS_ACCEPTED = 'accepted';
-    const STATUS_REJECTED = 'rejected';
+
 
     /**
      * @ORM\Column(type="integer")
@@ -77,7 +76,7 @@ class Applicant
 
     public function __construct()
     {
-        $this->status = self::STATUS_PENDING;
+        $this->status = self::STATUS_ACCEPTED;
         $this->recipes = new ArrayCollection();
         $this->cookWith = new ArrayCollection();
     }
@@ -146,30 +145,12 @@ class Applicant
         if (!in_array(
             $status,
             array(
-                self::STATUS_PENDING,
                 self::STATUS_ACCEPTED,
-                self::STATUS_REJECTED,
             )
         )) {
             throw new \InvalidArgumentException("Invalid status");
         }
         $this->status = $status;
-    }
-
-    /**
-     * @return int
-     */
-    public function getNrVotes()
-    {
-        return $this->nrVotes;
-    }
-
-    /**
-     * @param int $nrVotes
-     */
-    public function setNrVotes($nrVotes)
-    {
-        $this->nrVotes = $nrVotes;
     }
 
     /**
@@ -231,8 +212,6 @@ class Applicant
     {
         $prices =  array(
             self::STATUS_ACCEPTED,
-            self::STATUS_REJECTED,
-            self::STATUS_PENDING
         );
 
         return array_combine($prices, $prices);
