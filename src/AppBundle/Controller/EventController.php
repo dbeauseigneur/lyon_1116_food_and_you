@@ -25,7 +25,7 @@ use Symfony\Component\HttpFoundation\Request;
 class EventController extends Controller
 {
     /**
-     * @Route("/event/list", name="event_list", options={"expose"=true})
+     * @Route("/evenement/liste", name="event_list", options={"expose"=true})
      *
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
@@ -72,7 +72,7 @@ class EventController extends Controller
     }
 
     /**
-     * @Route("/event/details/{id}", name="event_details")
+     * @Route("/evenement/details/{id}", name="event_details")
      * @ParamConverter("event", class="AppBundle:Event", options={"repository_method" = "getEvent"})
      *
      * @param Event $event

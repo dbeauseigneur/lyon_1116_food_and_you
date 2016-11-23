@@ -176,7 +176,7 @@ if(+function($){"use strict";function transitionEnd(){var el=document.createElem
             requirements: [],
             hosttokens: []
         },
-        event_list: {tokens: [["text", "/event/list"]], defaults: [], requirements: [], hosttokens: []},
+        event_list: {tokens: [["text", "/evenement/liste"]], defaults: [], requirements: [], hosttokens: []},
         event_reserve: {
             tokens: [["variable", "/", "[^/]++", "id"], ["text", "/event/reserve"]],
             defaults: [],

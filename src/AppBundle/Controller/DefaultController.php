@@ -98,7 +98,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route(path="/regelement_du_jeu ", name="rules")
+     * @Route(path="/reglement-du-jeu", name="rules")
      */
     public function rulesAction()
     {
@@ -106,7 +106,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route(path="/qui_sommes_nous", name="about_us")
+     * @Route(path="/qui-sommes-nous", name="about_us")
      */
     public function aboutUsAction()
     {
