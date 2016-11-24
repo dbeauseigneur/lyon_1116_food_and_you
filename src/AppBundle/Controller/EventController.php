@@ -269,6 +269,32 @@ class EventController extends Controller
 
         $application = Application::create($member, $event);
 
+        $applicantRepository = $this->get('app.repository.applicant');
+        if ($event->isVotingPossible()) {
+            $applicants = $applicantRepository->getAllApplicants($event);
+        } else {
+            $applicants = $applicantRepository->getSelectedApplicants($event);
+        };
+
+        $hasEntry = 0;
+        $hasMain = 0;
+        $hasDessert = 0;
+        foreach ($applicants as $applicant) {
+            foreach ($applicant->getRecipes() as $applicantRecipe) {
+                switch ($applicantRecipe->getRecipe()->getType()) {
+                    case Recipe::TYPE_ENTRY:
+                        $hasEntry = 1;
+                        break;
+                    case Recipe::TYPE_MAIN:
+                        $hasMain = 1;
+                        break;
+                    case Recipe::TYPE_DESSERT:
+                        $hasDessert = 1;
+                        break;
+                }
+            }
+        }
+
         $form = $this->createForm(ApplicationType::class, $application);
         $form->handleRequest($request);
 
@@ -284,6 +310,10 @@ class EventController extends Controller
             ':event:apply_to.html.twig',
             array(
                 'event' => $event,
+                'applicants' => $applicants,
+                'hasEntry' => $hasEntry,
+                'hasMain' => $hasMain,
+                'hasDessert' => $hasDessert,
                 'member' => $member,
                 'form' => $form->createView(),
                 'recipeType' => $recipeType->createView(),

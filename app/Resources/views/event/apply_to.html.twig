@@ -118,6 +118,34 @@
             <div class="col-md-12">
                 <hr>
                 <h4 class="text-left">{{ 'event.apply_to.recipe.box.title'|trans }}</h4>
+                {% if (hasEntry == 1) or (hasMain == 1) or (hasDessert == 1) %}
+                    <span class="text-sm gray box">
+                        {{ 'event.apply_to.recipe_type_choosen'|trans }}
+                    </span>
+                    <div class="row">
+                        {% if (hasEntry == 1) %}
+                            <div class="col-md-1">
+                                <span class="text-sm gray box">
+                                    {{ ('dish.0entry' )|trans({},'base') }}
+                                </span>
+                            </div>
+                        {% endif %}
+                        {% if (hasMain == 1) %}
+                            <div class="col-md-1">
+                                <span class="text-sm gray box">
+                                    {{ ('dish.1main' )|trans({},'base') }}
+                                </span>
+                            </div>
+                        {% endif %}
+                        {% if (hasDessert == 1) %}
+                            <div class="col-md-1">
+                                <span class="text-sm gray box">
+                                    {{ ('dish.2dessert') |trans({},'base') }}
+                                </span>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endif %}
             </div>
             <div class="col-md-12 text-left box" id="recipe-list-container">
                 <div class="recipe-list"></div>
@@ -159,9 +187,36 @@
                         </div>
                         <div class="row form-group">
                             <div class="col-sm-12">
-                                <label for="_recipe_type_1" class="groupRadioButton"><input type="radio" name="app_recipe[Type]" checked id="_recipe_type_1" value="0entry"> <div>{{ 'event.apply_to.recipe.box.propose.popup.type.ENTREE'|trans }}</div></label>
-                                <label for="_recipe_type_2" class="groupRadioButton"><input type="radio" name="app_recipe[Type]" id="_recipe_type_2" value="1main"> <div>{{ 'event.apply_to.recipe.box.propose.popup.type.PLAT'|trans }}</div></label>
-                                <label for="_recipe_type_3" class="groupRadioButton"><input type="radio" name="app_recipe[Type]" id="_recipe_type_3" value="2dessert"> <div>{{ 'event.apply_to.recipe.box.propose.popup.type.DESERT'|trans }}</div></label>
+                                {# disabled radio when recipe.type is already choosen#}
+
+                                <label for="_recipe_type_1" class="groupRadioButton">
+
+                                    <input type="radio" name="app_recipe[Type]"
+                                        {% if ( hasEntry == 0) %}
+                                            checked
+                                        {% else %}
+                                            disabled
+                                        {% endif %}
+                                           id="_recipe_type_1" value="0entry">
+                                    <div>{{ 'event.apply_to.recipe.box.propose.popup.type.ENTREE'|trans }}</div></label>
+                                <label for="_recipe_type_2" class="groupRadioButton">
+                                    <input type="radio" name="app_recipe[Type]"
+                                        {% if ( hasMain == 1 ) %}
+                                            disabled
+                                        {% elseif (hasEntry == 1) %}
+                                            checked
+                                        {% endif %}
+                                            id="_recipe_type_2" value="1main">
+                                    <div>{{ 'event.apply_to.recipe.box.propose.popup.type.PLAT'|trans }}</div></label>
+                                <label for="_recipe_type_3" class="groupRadioButton">
+                                    <input type="radio" name="app_recipe[Type]"
+                                        {% if ( hasDessert == 1 ) %}
+                                            disabled
+                                        {% elseif ((hasEntry == 1) and (hasMain == 1)) %}
+                                            checked
+                                        {% endif %}
+                                            id="_recipe_type_3" value="2dessert">
+                                    <div>{{ 'event.apply_to.recipe.box.propose.popup.type.DESERT'|trans }}</div></label>
                             </div>
                         </div>
                         <div class="row form-group">
