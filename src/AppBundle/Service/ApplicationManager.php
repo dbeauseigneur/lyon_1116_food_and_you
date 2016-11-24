@@ -93,9 +93,8 @@ class ApplicationManager
         $applicant = new Applicant();
         $applicant->setEvent($application->getEvent());
         $applicant->setMember($application->getMember());
-        $applicant->setNrVotes(0);
         $applicant->setAppliedAt(new \DateTime());
-        $applicant->setStatus(Applicant::STATUS_PENDING);
+        $applicant->setStatus(Applicant::STATUS_ACCEPTED);
 
         $this->applicantRepository->save($applicant);
 
