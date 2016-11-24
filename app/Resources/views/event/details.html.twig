@@ -91,9 +91,9 @@
                     {% if event.status == constant('AppBundle\\Entity\\Event::STATUS_APPLICANT_REGISTRATION_OPENED') %}
                         {{ 'status.application.open' | trans }}
                     {% elseif event.status == constant('AppBundle\\Entity\\Event::STATUS_APPLICANT_REGISTRATION_CLOSED') %}
-                        {{ 'status.application.closed' | trans }}
-                    {% elseif event.status == constant('AppBundle\\Entity\\Event::STATUS_RESERVATIONS_OPENED') %}
                         {{ 'status.reservations.open' | trans }}
+                    {% elseif event.status == constant('AppBundle\\Entity\\Event::STATUS_RESERVATIONS_OPENED') %}
+                        {{ 'status.reservations.application.open' | trans }}
                     {% elseif event.status == constant('AppBundle\\Entity\\Event::STATUS_RESERVATIONS_CLOSED') or
                     event.status is constant("AppBundle\\Entity\\Event::STATUS_IN_PROGRESS") %}
                         {{ 'status.reservations.closed' | trans }}
@@ -109,8 +109,8 @@
     </div>
     <div class="container-fluid" id="status_block">
         <div class="row">
-            <div class="col-sm-6 Event__reserve">
-                {% if event.status == constant('AppBundle\\Entity\\Event::STATUS_APPLICANT_REGISTRATION_OPENED') %}
+            {% if event.status == constant('AppBundle\\Entity\\Event::STATUS_APPLICANT_REGISTRATION_OPENED') %}
+                <div class="col-sm-6 Event__reserve">
                     <div>
                         <div class="text-xxlg">
                             {{ 'event.left' | trans }}
@@ -121,6 +121,7 @@
                             </div>
                         </div>
                         <h4 class="lighter">{{ 'event.days.to.apply' | trans }}</h4>
+                        <h4 class="lighter">{{ 'event.apply.as.cook' | trans }}</h4>
                         {% if applied %}
                             <button onclick="displayMessageModal('{{ 'event.already.applied' | trans }}', 'ok');" class="Btn red md round-corners border-white">{{ 'event.apply' | trans }}</button>
                         {% elseif app.user %}
@@ -129,25 +130,16 @@
                             <button onclick="displayModal('modal_login');" class="Btn red md round-corners border-white">{{ 'event.apply' | trans }}</button>
                         {% endif %}
                     </div>
-                {% endif %}
-                {% if event.status == constant('AppBundle\\Entity\\Event::STATUS_APPLICANT_REGISTRATION_CLOSED') %}
-                    <div>
-                        <div class="text-xxlg">
-                            {{ 'event.reservations.open.in' | trans }}
-                        </div>
-                        <div class="Sticker sm white">
-                            <div class="Sticker__content">
-                                {% set timeToReservationOpen = date(event.applicationEndDate).diff(date('-2 days')) %}
-                                <h2 class="lighter">{{ timeToReservationOpen.format('%d') * 24 + timeToReservationOpen.format('%h') }}h</h2>
-                            </div>
-                        </div>
-                        <div class="text-xxlg">
-                            {{ 'event.reservations.come.back' | trans }}
-                        </div>
-                        <a href="#voteNow" class="Btn red md round-corners border-white">{{ 'vote.candidate' | trans }}</a>
-                    </div>
-                {% endif %}
-                {% if event.status == constant('AppBundle\\Entity\\Event::STATUS_RESERVATIONS_OPENED') %}
+                </div>
+                <div class="col-sm-6 Event__map">
+                    {% include 'partials/map/map.html.twig' with {'event': event} %}
+                </div>
+            {% endif %}
+            {% if event.status == constant('AppBundle\\Entity\\Event::STATUS_APPLICANT_REGISTRATION_CLOSED') %}
+                <div class="col-sm-6 Event__map">
+                    {% include 'partials/map/map.html.twig' with {'event': event} %}
+                </div>
+                <div class="col-sm-6 Event__reserve">
                     <div>
                         {% set isFull = (event.capacity.maximum) - (event.confirmedReservations) <= 0 %}
                         {% if isFull %}
@@ -175,40 +167,100 @@
                                 </div>
                             </div>
                             <h4 class="lighter">{{ 'event.places.left' | transchoice((event.capacity.maximum) - (event.confirmedReservations)) }}</h4>
+                            <h4 class="lighter">{{ 'event.places.as.critic' | trans }}</h4>
                             <a href="javascript: void(0);" onclick="{% if app.user %}displayModal('event_reserve', {'id': {{ event.id }} });{% else %}displayModal('modal_login');{% endif %}" class="Btn red md round-corners border-white{% if isFull %} disabled{% endif %}">{{ 'event.reserve'|trans }}</a>
                         {% endif %}
                     </div>
-                {% endif %}
-                {% if event.status == constant('AppBundle\\Entity\\Event::STATUS_RESERVATIONS_CLOSED') or
-                event.status is constant("AppBundle\\Entity\\Event::STATUS_IN_PROGRESS") %}
-                    <div class="text-xxlg">
-                        {{ 'event.status.reservation.closed.see.more' | trans }}<br>
+                </div>
+            {% endif %}
+            {% if event.status == constant('AppBundle\\Entity\\Event::STATUS_RESERVATIONS_OPENED') %}
+                <div class="col-sm-3 Event__reserve">
+                    <div>
+                        <div class="text-xxlg">
+                            {{ 'event.left' | trans }}
+                        </div>
                         <div class="Sticker sm white">
                             <div class="Sticker__content">
-                                <h5 class="lighter">Food & You</h5>
+                                <h2 class="lighter">{{ date(event.applicationEndDate).diff(date('now')).days }}</h2>
                             </div>
                         </div>
-                        {{ 'event.status.reservation.closed' | trans }}<br>
-                        <button class="Btn red md round-corners border-white gouteurs">{{ 'event.view.all'| trans }}</button>
+                        <h4 class="lighter">{{ 'event.days.to.apply' | trans }}</h4>
+                        <h4 class="lighter">{{ 'event.apply.as.cook' | trans }}</h4>
+                        {% if applied %}
+                            <button onclick="displayMessageModal('{{ 'event.already.applied' | trans }}', 'ok');" class="Btn red md round-corners border-white">{{ 'event.apply' | trans }}</button>
+                        {% elseif app.user %}
+                            <a href="{{ path('event_apply_to', {'id': event.id}) }}" class="Btn red md round-corners border-white">{{ 'event.apply' | trans }}</a>
+                        {% else %}
+                            <button onclick="displayModal('modal_login');" class="Btn red md round-corners border-white">{{ 'event.apply' | trans }}</button>
+                        {% endif %}
                     </div>
-                {% endif %}
-                {% if event.status == constant('AppBundle\\Entity\\Event::STATUS_FINISHED') %}
+                </div>
+                <div class="col-sm-6 Event__map">
+                    {% include 'partials/map/map.html.twig' with {'event': event} %}
+                </div>
+                <div class="col-sm-3 Event__reserve">
+                    <div>
+                        {% set isFull = (event.capacity.maximum) - (event.confirmedReservations) <= 0 %}
+                        {% if isFull %}
+                            <div class="text-xxlg">
+                                {{ 'our.event.is'|trans }}
+                            </div>
+                            <div class="Sticker md-plus white">
+                                <div class="Sticker__content">
+                                    <h5 class="lighter">{{ "event.full"|trans }}</h5>
+                                </div>
+                            </div>
+                            <a href="{{ path('event_list') }}" class="Btn red md round-corners border-white">{{ 'event.view.all'| trans }}</a>
+                        {% elseif reserved == true %}
+                            <span class="text-xxlg">
+                                {{ 'event.already.reserved' | trans }}
+                            </span>
+                            <button class="Btn red md round-corners border-white gouteurs">{{ 'event.view.all'| trans }}</button>
+                        {% else %}
+                            <div class="text-xxlg">
+                                {{ 'event.only.left' | trans }}
+                            </div>
+                            <div class="Sticker sm white">
+                                <div class="Sticker__content">
+                                    <h2 class="lighter">{{ (event.capacity.maximum) - (event.confirmedReservations) }}</h2>
+                                </div>
+                            </div>
+                            <h4 class="lighter">{{ 'event.places.left' | transchoice((event.capacity.maximum) - (event.confirmedReservations)) }}</h4>
+                            <h4 class="lighter">{{ 'event.places.as.critic' | trans }}</h4>
+                            <a href="javascript: void(0);" onclick="{% if app.user %}displayModal('event_reserve', {'id': {{ event.id }} });{% else %}displayModal('modal_login');{% endif %}" class="Btn red md round-corners border-white{% if isFull %} disabled{% endif %}">{{ 'event.reserve'|trans }}</a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+            {% if event.status == constant('AppBundle\\Entity\\Event::STATUS_RESERVATIONS_CLOSED') or
+            event.status is constant("AppBundle\\Entity\\Event::STATUS_IN_PROGRESS") %}
+            <div class="col-sm-6 Event__reserve">
+                <div class="text-xxlg">
+                    {{ 'event.status.reservation.closed.see.more' | trans }}<br>
+                    <div class="Sticker sm white">
+                        <div class="Sticker__content">
+                            <h5 class="lighter">Food & You</h5>
+                        </div>
+                    </div>
+                    {{ 'event.status.reservation.closed' | trans }}<br>
+                    <button class="Btn red md round-corners border-white gouteurs">{{ 'event.view.all'| trans }}</button>
+                </div>
+            </div>
+            <div class="col-sm-6 Event__map">
+                {% include 'partials/map/map.html.twig' with {'event': event} %}
+            </div>
+            {% endif %}
+            {% if event.status == constant('AppBundle\\Entity\\Event::STATUS_FINISHED') %}
+                <div class="col-sm-6 Event__reserve">
                     <div class="text-xxlg">
                         {{ 'event.status.finished' | trans }}<br>
                         <a href="{{ path('event_list') }}" class="Btn red md round-corners border-white">{{ 'event.view.all'| trans }}</a>
                     </div>
+                </div>
+                <div class="col-sm-6 Event__map">
+                    {% include 'partials/map/map.html.twig' with {'event': event} %}
+                </div>
                 {% endif %}
-            </div>
-            <div class="col-sm-6 Event__map">
-                <iframe
-                        width="100%"
-                        height="350"
-                        frameborder="0"
-                        style="border:0;"
-                        class="grayscale"
-                        src="https://www.google.com/maps/embed/v1/place?key={{ google_map_api }}&q={{ event.restaurant.street|url_encode }},{{ event.restaurant.postalCode }}%20{{ event.restaurant.city }}%20France" allowfullscreen>
-                </iframe>
-            </div>
         </div>
     </div>
     <div class="container box-lg" id="applicants">
