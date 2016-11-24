@@ -11,7 +11,7 @@
       </trans-unit>
       <trans-unit id="4ba34cbde42ddbe9bd7ad76bd273dc1e" resname="event.status.application.closed">
         <source>event.status.application.closed</source>
-        <target>En cours de sélection</target>
+        <target>Réservations ouvertes</target>
       </trans-unit>
       <trans-unit id="08250b596f94bc695c702a423ed9929d" resname="event.only.left">
         <source>event.only.left</source>
@@ -19,11 +19,11 @@
       </trans-unit>
       <trans-unit id="3394e87feb9a31132eb41e2816c9b533" resname="event.days.to.apply">
         <source>event.days.to.apply</source>
-        <target>jours pour postuler</target>
+        <target>jours pour s'inscrire</target>
       </trans-unit>
       <trans-unit id="86e7905cbe8a3dd4c0c2184a40f9108f" resname="event.apply">
         <source>event.apply</source>
-        <target>Je postule !</target>
+        <target>Je m'inscris !</target>
       </trans-unit>
       <trans-unit id="6098bdc7a5618404cce51047d455970b" resname="event.reserve">
         <source>event.reserve</source>
@@ -63,7 +63,7 @@
       </trans-unit>
       <trans-unit id="6259a933bf8ac6eab33ea8866fcd78fb" resname="status.application.open">
         <source>status.application.open</source>
-        <target>En cours de sélection</target>
+        <target>Cuisinier amateur en cours d'inscription</target>
       </trans-unit>
       <trans-unit id="ab210ab186bbeda54694945cad2cd8c0" resname="status.application.closed">
         <source>status.application.closed</source>
@@ -171,7 +171,7 @@
       </trans-unit>
       <trans-unit id="13a3f4213d5243ded6a5d5e246f42523" resname="event.already.applied">
         <source>event.already.applied</source>
-        <target>Vous avez déjà postulé pour cet événement</target>
+        <target>Vous vous êtes déjà inscrit pour cet événement</target>
       </trans-unit>
       <trans-unit id="8d9d33e1bfb6249db4581c04decf7144" resname="error.capacity.max">
         <source>error.capacity.max</source>
@@ -180,6 +180,18 @@
       <trans-unit id="3afa402c6108c378be35d0d3b7d7f75a" resname="error.capacity.limit">
         <source>error.capacity.limit</source>
         <target>Maximum de 6 personnes atteint</target>
+      </trans-unit>
+      <trans-unit id="7836b76c6e02ee1d46c1a457bb93e8d9" resname="event.apply.as.cook">
+        <source>event.apply.as.cook</source>
+        <target>en tant que cuisinier</target>
+      </trans-unit>
+      <trans-unit id="d4c8c0570db891a56c77ca8eb291ecee" resname="event.places.as.critic">
+        <source>event.places.as.critic</source>
+        <target>en tant que critique</target>
+      </trans-unit>
+      <trans-unit id="bbd6f31ef0d57f0805d22bfdf323c9e6" resname="status.reservations.application.open">
+        <source>status.reservations.application.open</source>
+        <target>Inscriptions et réservations ouvertes</target>
       </trans-unit>
     </body>
   </file>
