@@ -23,11 +23,11 @@
       </trans-unit>
       <trans-unit id="4f4dfeefb50db28aab7f4e10aafebc54" resname="homepage.last.events.reserve">
         <source>homepage.last.events.reserve</source>
-        <target>RÉSERVEZ pour déguster</target>
+        <target>S'INSCRIRE</target>
       </trans-unit>
       <trans-unit id="64b8f9ef697b8ad024f0af2316a62a39" resname="homepage.last.events.apply">
         <source>homepage.last.events.apply</source>
-        <target>POSTULEZ pour cuisiner</target>
+        <target>S'INSCRIRE</target>
       </trans-unit>
     </body>
   </file>
