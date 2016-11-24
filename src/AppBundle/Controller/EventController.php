@@ -128,7 +128,7 @@ class EventController extends Controller
     }
 
     /**
-     * @Route("/evenement/reservation/{slug}", name="event_reserve", options={"expose"=true})
+     * @Route("/evenement/reservation/{id}", name="event_reserve", options={"expose"=true})
      *
      * @param Event $event
      * @return \Symfony\Component\HttpFoundation\Response
