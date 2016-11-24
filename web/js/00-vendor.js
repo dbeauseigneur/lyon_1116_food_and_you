@@ -1511,7 +1511,7 @@ if (+function ($) {
         },
         event_list: {tokens: [["text", "/evenement/liste"]], defaults: [], requirements: [], hosttokens: []},
         event_reserve: {
-            tokens: [["variable", "/", "[^/]++", "id"], ["text", "/event/reserve"]],
+            tokens: [["variable", "/", "[^/]++", "id"], ["text", "/evenement/reservation"]],
             defaults: [],
             requirements: [],
             hosttokens: []
@@ -1589,7 +1589,7 @@ if (+function ($) {
             hosttokens: []
         },
         restaurant_owner_admin_reservations_list: {
-            tokens: [["variable", "/", "[^/]++", "event"], ["text", "/restaurateur/reservations/list"]],
+            tokens: [["variable", "/", "[^/]++", "event"], ["text", "/restaurateur/reservations/liste"]],
             defaults: [],
             requirements: {_method: "POST"},
             hosttokens: []
@@ -1607,7 +1607,7 @@ if (+function ($) {
             hosttokens: []
         },
         restaurant_owner_admin_event_new: {
-            tokens: [["text", "/restaurateur/event/create"]],
+            tokens: [["text", "/restaurateur/evenement/creation"]],
             defaults: [],
             requirements: [],
             hosttokens: []
@@ -1619,7 +1619,7 @@ if (+function ($) {
             hosttokens: []
         },
         restaurant_owner_restaurant_edit: {
-            tokens: [["text", "/restaurateur/restaurant/edit"]],
+            tokens: [["text", "/restaurateur/restaurant/editer"]],
             defaults: [],
             requirements: [],
             hosttokens: []
