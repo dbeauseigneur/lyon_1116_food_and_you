@@ -14,7 +14,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Applicant
 {
+    const STATUS_PENDING = 'pending';
     const STATUS_ACCEPTED = 'accepted';
+    const STATUS_REJECTED = 'rejected';
 
     /**
      * @ORM\Column(type="integer")
@@ -144,7 +146,9 @@ class Applicant
         if (!in_array(
             $status,
             array(
+                self::STATUS_PENDING,
                 self::STATUS_ACCEPTED,
+                self::STATUS_REJECTED,
             )
         )) {
             throw new \InvalidArgumentException("Invalid status");
@@ -227,6 +231,8 @@ class Applicant
     {
         $prices =  array(
             self::STATUS_ACCEPTED,
+            self::STATUS_REJECTED,
+            self::STATUS_PENDING,
         );
 
         return array_combine($prices, $prices);
