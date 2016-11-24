@@ -77,7 +77,7 @@ class Applicant
 
     public function __construct()
     {
-        $this->status = self::STATUS_PENDING;
+        $this->status = self::STATUS_ACCEPTED;
         $this->recipes = new ArrayCollection();
         $this->cookWith = new ArrayCollection();
     }
@@ -232,7 +232,7 @@ class Applicant
         $prices =  array(
             self::STATUS_ACCEPTED,
             self::STATUS_REJECTED,
-            self::STATUS_PENDING
+            self::STATUS_PENDING,
         );
 
         return array_combine($prices, $prices);
