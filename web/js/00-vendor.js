@@ -1568,8 +1568,8 @@ if (+function ($) {
             requirements: [],
             hosttokens: []
         },
-        recipe_list: {tokens: [["text", "/my-recipes"]], defaults: [], requirements: [], hosttokens: []},
-        recipe_add: {tokens: [["text", "/my-recipes/add"]], defaults: [], requirements: [], hosttokens: []},
+        recipe_list: {tokens: [["text", "/mes-recettes"]], defaults: [], requirements: [], hosttokens: []},
+        recipe_add: {tokens: [["text", "/mes-recettes/ajouter"]], defaults: [], requirements: [], hosttokens: []},
         restaurants_name_list: {
             tokens: [["text", "/restaurants/name/list"]],
             defaults: [],
