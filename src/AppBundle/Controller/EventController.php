@@ -276,6 +276,25 @@ class EventController extends Controller
             $applicants = $applicantRepository->getSelectedApplicants($event);
         };
 
+        $hasEntry = 0;
+        $hasMain = 0;
+        $hasDessert = 0;
+        foreach ($applicants as $applicant) {
+            foreach ($applicant->getRecipes() as $applicantRecipe) {
+                switch ($applicantRecipe->getRecipe()->getType()) {
+                    case Recipe::TYPE_ENTRY:
+                        $hasEntry = 1;
+                        break;
+                    case Recipe::TYPE_MAIN:
+                        $hasMain = 1;
+                        break;
+                    case Recipe::TYPE_DESSERT:
+                        $hasDessert = 1;
+                        break;
+                }
+            }
+        }
+
         $form = $this->createForm(ApplicationType::class, $application);
         $form->handleRequest($request);
 
@@ -292,6 +311,9 @@ class EventController extends Controller
             array(
                 'event' => $event,
                 'applicants' => $applicants,
+                'hasEntry' => $hasEntry,
+                'hasMain' => $hasMain,
+                'hasDessert' => $hasDessert,
                 'member' => $member,
                 'form' => $form->createView(),
                 'recipeType' => $recipeType->createView(),

@@ -118,25 +118,33 @@
             <div class="col-md-12">
                 <hr>
                 <h4 class="text-left">{{ 'event.apply_to.recipe.box.title'|trans }}</h4>
-                {% set existant = 1 %}
-                {% for applicant in applicants %}
-                    {% if (existant == 1) %}
-                        <span class="text-sm gray box">
-                            {{ 'event.apply_to.recipe_type_choosen'|trans }}
-                        </span>
-                        <div class="row">
-                        {% set existant = 0 %}
-                    {%  endif %}
-                            <div class="col-md-12">
-                    {%  for applicantRecipe in applicant.recipes %}
+                {% if (hasEntry == 1) or (hasMain == 1) or (hasDessert == 1) %}
+                    <span class="text-sm gray box">
+                        {{ 'event.apply_to.recipe_type_choosen'|trans }}
+                    </span>
+                    <div class="row">
+                        {% if (hasEntry == 1) %}
+                            <div class="col-md-1">
                                 <span class="text-sm gray box">
-                                    {{ ('dish.' ~ applicantRecipe.recipe.type) |trans({},'base') }}
+                                    {{ ('dish.0entry' )|trans({},'base') }}
                                 </span>
-                    {% endfor  %}
                             </div>
-                {% endfor %}
-                {% if (existant ==0) %}
-                        </div>
+                        {% endif %}
+                        {% if (hasMain == 1) %}
+                            <div class="col-md-1">
+                                <span class="text-sm gray box">
+                                    {{ ('dish.1main' )|trans({},'base') }}
+                                </span>
+                            </div>
+                        {% endif %}
+                        {% if (hasDessert == 1) %}
+                            <div class="col-md-1">
+                                <span class="text-sm gray box">
+                                    {{ ('dish.2dessert') |trans({},'base') }}
+                                </span>
+                            </div>
+                        {% endif %}
+                    </div>
                 {% endif %}
             </div>
             <div class="col-md-12 text-left box" id="recipe-list-container">
@@ -179,27 +187,12 @@
                         </div>
                         <div class="row form-group">
                             <div class="col-sm-12">
-                                {# désactiver les radio bouton des types de plat déjà choisi#}
-                                {% set recipe_type_1_exist = 0 %}
-                                {% set recipe_type_2_exist = 0 %}
-                                {% set recipe_type_3_exist = 0 %}
-                                {% for applicant in applicants %}
-                                    {%  for applicantRecipe in applicant.recipes %}
-                                        {% if (applicantRecipe.recipe.type) == "0entry"%}
-                                            {% set recipe_type_1_exist = 1 %}
-                                        {% endif %}
-                                        {% if (applicantRecipe.recipe.type) == "1main"%}
-                                            {% set recipe_type_2_exist = 1 %}
-                                        {% endif %}
-                                        {% if (applicantRecipe.recipe.type) == "2dessert"%}
-                                            {% set recipe_type_3_exist = 1 %}
-                                        {% endif %}
-                                    {% endfor  %}
-                                {% endfor %}
+                                {# disabled radio when recipe.type is already choosen#}
+
                                 <label for="_recipe_type_1" class="groupRadioButton">
 
                                     <input type="radio" name="app_recipe[Type]"
-                                        {% if (recipe_type_1_exist == 0) %}
+                                        {% if ( hasEntry == 0) %}
                                             checked
                                         {% else %}
                                             disabled
@@ -208,18 +201,18 @@
                                     <div>{{ 'event.apply_to.recipe.box.propose.popup.type.ENTREE'|trans }}</div></label>
                                 <label for="_recipe_type_2" class="groupRadioButton">
                                     <input type="radio" name="app_recipe[Type]"
-                                        {% if (recipe_type_2_exist == 1 ) %}
+                                        {% if ( hasMain == 1 ) %}
                                             disabled
-                                        {% elseif (recipe_type_1_exist == 1) %}
+                                        {% elseif (hasEntry == 1) %}
                                             checked
                                         {% endif %}
                                             id="_recipe_type_2" value="1main">
                                     <div>{{ 'event.apply_to.recipe.box.propose.popup.type.PLAT'|trans }}</div></label>
                                 <label for="_recipe_type_3" class="groupRadioButton">
                                     <input type="radio" name="app_recipe[Type]"
-                                        {% if (recipe_type_3_exist == 1 ) %}
+                                        {% if ( hasDessert == 1 ) %}
                                             disabled
-                                        {% elseif ((recipe_type_1_exist == 1) and (recipe_type_2_exist == 1)) %}
+                                        {% elseif ((hasEntry == 1) and (hasMain == 1)) %}
                                             checked
                                         {% endif %}
                                             id="_recipe_type_3" value="2dessert">
