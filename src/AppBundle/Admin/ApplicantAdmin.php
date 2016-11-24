@@ -28,15 +28,6 @@ class ApplicantAdmin extends Admin
             )
             ->add('member', 'sonata_type_model_list', array('btn_add' => false, 'btn_delete' => false))
             ->add('appliedAt', 'sonata_type_datetime_picker')
-            ->add(
-                'status',
-                'choice',
-                array(
-                    'required' => true,
-                    'choices' => Applicant::getStatuses(),
-                    'translation_domain' => 'SonataAdminApplicant',
-                )
-            )
             ->end();
 
         if (!is_numeric($formMapper->getFormBuilder()->getForm()->getName())) {
@@ -72,8 +63,7 @@ class ApplicantAdmin extends Admin
             ->add('event')
             ->add('member.fullName')
             ->add('nrRecipes')
-            ->add('nrVotes')
-            ->add('status', 'trans', array('catalogue' => 'SonataAdminApplicant'));
+            ->add('nrVotes');
     }
 
     /**
@@ -97,16 +87,6 @@ class ApplicantAdmin extends Admin
     {
         $datagridMapper
             ->add('event.id')
-            ->add('member')
-            ->add(
-                'status',
-                null,
-                array(),
-                'choice',
-                array(
-                    'choices' => Applicant::getStatuses(),
-                    'translation_domain' => 'SonataAdminApplicant',
-                )
-            );
+            ->add('member');
     }
 }

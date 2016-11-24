@@ -16,7 +16,6 @@ class Applicant
 {
     const STATUS_ACCEPTED = 'accepted';
 
-
     /**
      * @ORM\Column(type="integer")
      * @ORM\Id
@@ -151,6 +150,22 @@ class Applicant
             throw new \InvalidArgumentException("Invalid status");
         }
         $this->status = $status;
+    }
+
+    /**
+     * @return int
+     */
+    public function getNrVotes()
+    {
+        return $this->nrVotes;
+    }
+
+    /**
+     * @param int $nrVotes
+     */
+    public function setNrVotes($nrVotes)
+    {
+        $this->nrVotes = $nrVotes;
     }
 
     /**
