@@ -300,7 +300,15 @@ class EventController extends Controller
 
         if ($form->isValid()) {
             $this->get('app.manager.application')->process($application);
+            if ( $applicantRepository->hasOneApplicantRecipeOfEach($event)) {
+                $event->setStatus(Event::STATUS_APPLICANT_REGISTRATION_CLOSED);
+            } else {
+                $event->setStatus(Event::STATUS_RESERVATIONS_OPENED);
+            }
 
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($event);
+            $em->flush();
             return $this->redirect($this->generateUrl("member_profile", array( "slug" => $member->getSlug())) . "#applicant_success");
         }
 
