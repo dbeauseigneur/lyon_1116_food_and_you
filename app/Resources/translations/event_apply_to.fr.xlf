@@ -130,6 +130,10 @@
         <source>event.apply_to.recipe.box.propose.media.format</source>
         <target>Format .jpg, .png</target>
       </trans-unit>
+      <trans-unit id="379ae74cff7c4138ddca9ae31322d35f" resname="event.apply_to.recipe_type_choosen">
+        <source>event.apply_to.recipe_type_choosen</source>
+        <target>Plat(s) déjà choisi(s) :</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
