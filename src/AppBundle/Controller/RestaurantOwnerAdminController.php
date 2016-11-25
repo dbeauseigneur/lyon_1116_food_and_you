@@ -27,7 +27,7 @@ class RestaurantOwnerAdminController extends Controller
     const PAGINATION_LIMIT = 5;
 
     /**
-     * @Route(path="/events/list/{page}", name="restaurant_owner_admin_event_list")
+     * @Route(path="/evenements/liste/{page}", name="restaurant_owner_admin_event_list")
      * @Template(template="restaurant_owner_admin/list.html.twig")
      *
      * @param $page
@@ -113,7 +113,7 @@ class RestaurantOwnerAdminController extends Controller
 
     /**
      * @Route(
-     *     path="/reservations/list/{event}",
+     *     path="/reservations/liste/{event}",
      *     name="restaurant_owner_admin_reservations_list",
      *     options={"expose"=true},
      *     condition="request.isXmlHttpRequest()"
@@ -207,7 +207,7 @@ class RestaurantOwnerAdminController extends Controller
     }
 
     /**
-     * @Route("/event/create", name="restaurant_owner_admin_event_new", options={"expose"=true})
+     * @Route("/evenement/creation", name="restaurant_owner_admin_event_new", options={"expose"=true})
      * @Security("has_role('ROLE_USER')")
      * @Template(template="restaurant_owner_admin/event_new.html.twig")
      *
@@ -283,7 +283,7 @@ class RestaurantOwnerAdminController extends Controller
 
     /**
      * @Route(
-     *     path="/restaurant/edit",
+     *     path="/restaurant/editer",
      *     name="restaurant_owner_restaurant_edit",
      *     options={"expose"=true},
      * )
