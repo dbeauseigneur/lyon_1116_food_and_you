@@ -47,7 +47,7 @@ class ApplicantRegistrationClosedEventListener
     }
 
     /**
-     * @param ApplicantChosenEvent $event
+     * @param ApplicantRegistrationClosedEventListener $event
      */
     public function handle(ApplicantChosenEvent $event)
     {
@@ -57,24 +57,24 @@ class ApplicantRegistrationClosedEventListener
     }
 
     /**
-     * @param ApplicantChosenEvent $event
+     * @param ApplicantRegistrationClosedEventListener $event
      * @return Email
      */
-    protected function generateEmail(ApplicantChosenEvent $event)
+    protected function generateEmail(ApplicantRegistrationClosedEventListener $event)
     {
         $email = new Email();
         $email->setSender($this->fromEmail);
         $email->setRecipient($event->getRestaurant()->getMember()->getAuthentication()->getEmail());
-        $email->setSubject($this->translator->trans('applicant_chosen.subject', array(), 'email'));
+        $email->setSubject($this->translator->trans('applicant_registration_closed.subject', array(), 'email'));
         $email->setReplyTo($this->fromEmail);
         $email->setBody($this->templating->render(
-            ':email:applicant_chosen.html.twig',
+            ':email:team_completed.html.twig',
             array(
                 'applicant' => $event->getApplicant()
             )
         ));
         $email->setPlainBody($this->templating->render(
-            ':email:applicant_chosen.txt.twig',
+            ':email:team_completed.txt.twig',
             array(
                 'applicant' => $event->getApplicant()
             )
