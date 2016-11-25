@@ -372,10 +372,10 @@ class EventRepository extends EntityRepository
 
     /**
      * Get event with winning dish if any
-     * @param $id
+     * @param $slug
      * @return \AppBundle\Entity\Event[]
      */
-    public function getEvent($id)
+    public function getEvent($slug)
     {
         $qb = $this
             ->createQueryBuilder('e')
@@ -384,8 +384,8 @@ class EventRepository extends EntityRepository
             ->leftJoin('rs.gallery', 'g')
             ->leftJoin('g.galleryHasMedias', 'gms')
             ->leftJoin('gms.media', 'gm')
-            ->where('e.id = :eventId')
-            ->setParameter('eventId', $id);
+            ->where('e.slug = :eventSlug')
+            ->setParameter('eventSlug', $slug);
 
         return $qb->getQuery()->getOneOrNullResult();
     }

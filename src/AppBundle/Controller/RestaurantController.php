@@ -37,7 +37,7 @@ class RestaurantController extends Controller
     /**
      * @param $request Request
      *
-     * @Route("/restaurants/create", name="restaurant_create")
+     * @Route("/restaurant/creation", name="restaurant_create")
      * @Security("has_role('ROLE_USER')")
      *
      * @return Response

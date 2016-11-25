@@ -80,6 +80,7 @@ class Applicant
         $this->status = self::STATUS_ACCEPTED;
         $this->recipes = new ArrayCollection();
         $this->cookWith = new ArrayCollection();
+        $this->nrVotes = 0;
     }
 
     public function __toString()

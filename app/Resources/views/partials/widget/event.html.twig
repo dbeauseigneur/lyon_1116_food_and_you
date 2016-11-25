@@ -80,13 +80,13 @@ event.status is constant("AppBundle\\Entity\\Event::STATUS_IN_PROGRESS") %}
         {% if event.status is constant("AppBundle\\Entity\\Event::STATUS_RESERVATIONS_OPENED") or
         event.status is constant("AppBundle\\Entity\\Event::STATUS_APPLICANT_REGISTRATION_OPENED") or
         event.status is constant("AppBundle\\Entity\\Event::STATUS_APPLICANT_REGISTRATION_CLOSED") %}
-            <a href="{{ path('event_details', {'id': event.id}) }}" class="Btn green block Btn--image">
+            <a href="{{ path('event_details', {'id': event.slug}) }}" class="Btn green block Btn--image">
                 <span><img src="{{ asset('images/widget/cover.png') }}"></span>
                 <span>{{ "homepage.last.events.reserve"|trans({}, "c_event") }}</span>
             </a>
         {% elseif event.status is constant("AppBundle\\Entity\\Event::STATUS_RESERVATIONS_CLOSED") or
         event.status is constant("AppBundle\\Entity\\Event::STATUS_IN_PROGRESS") %}
-            <a href="{{ path('event_details', {'id': event.id}) }}" class="Btn green-dark2 block Btn--image disabled">
+            <a href="{{ path('event_details', {'id': event.slug}) }}" class="Btn green-dark2 block Btn--image disabled">
                 <span><img src="{{ asset('images/widget/cover.png') }}"></span>
                 <span>{{ "homepage.last.events.reserve"|trans({}, "c_event") }}</span>
             </a>
