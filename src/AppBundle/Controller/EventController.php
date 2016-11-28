@@ -276,7 +276,6 @@ class EventController extends Controller
             $applicants = $applicantRepository->getSelectedApplicants($event);
         };
 
-        $this->get('app.manager.application')->process($application);
         $eventRepository = $this->get('app.repository.event');
         If ($eventRepository->hasOneApplicantRecipeOfType ($event,Recipe::TYPE_ENTRY)) {
             $hasEntry = 1;
