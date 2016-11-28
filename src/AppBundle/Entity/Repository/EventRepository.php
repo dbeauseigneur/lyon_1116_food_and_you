@@ -452,7 +452,7 @@ class EventRepository extends EntityRepository
      * @param $type
      * @return bool
      */
-    private function hasOneApplicantRecipeOfType(Event $event, $type)
+    public function hasOneApplicantRecipeOfType(Event $event, $type)
     {
         $qb = $this
             ->createQueryBuilder('e')
