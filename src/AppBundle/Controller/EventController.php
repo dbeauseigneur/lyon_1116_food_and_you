@@ -253,7 +253,7 @@ class EventController extends Controller
     }
 
     /**
-     * @Route("/evenement/inscription/{id}", name="event_apply_to")
+     * @Route("/evenement/inscription/{slug}", name="event_apply_to")
      *
      * @param Request $request
      * @param Event $event
