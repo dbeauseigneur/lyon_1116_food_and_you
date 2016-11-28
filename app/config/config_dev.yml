@@ -43,6 +43,6 @@ monolog:
 
 swiftmailer:
     transport: gmail
-    username:  'dev.soluti@gmail.com'
-    password:  'soluti.dev1'
+    username:  '%mailer_user%'
+    password:  '%mailer_password%'
     delivery_address: '%delivery_address%'
