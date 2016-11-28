@@ -44,7 +44,7 @@ class Event
      * @Gedmo\Slug(handlers={
      *      @Gedmo\SlugHandler(class="Gedmo\Sluggable\Handler\RelativeSlugHandler", options={
      *          @Gedmo\SlugHandlerOption(name="relationField", value="restaurant"),
-     *          @Gedmo\SlugHandlerOption(name="relationSlugField", value="name"),
+     *          @Gedmo\SlugHandlerOption(name="relationSlugField", value="slug"),
      *          @Gedmo\SlugHandlerOption(name="separator", value="-")
      *      })
      * }, separator="-", updatable=true, fields={"startDate"}, dateFormat="d-m-Y")
@@ -380,6 +380,10 @@ class Event
         return $votingPossible = in_array($this->getStatus(), [
             Event::STATUS_APPLICANT_REGISTRATION_OPENED,
             Event::STATUS_APPLICANT_REGISTRATION_CLOSED,
+            Event::STATUS_RESERVATIONS_OPENED,
+            Event::STATUS_RESERVATIONS_CLOSED,
+            Event::STATUS_IN_PROGRESS,
+            Event::STATUS_FINISHED
         ]);
     }
 
