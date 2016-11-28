@@ -41,7 +41,7 @@ event.status is constant("AppBundle\\Entity\\Event::STATUS_IN_PROGRESS") %}
 {% endif %}
 
 <div class="Widget">
-    <a href="{{ path('event_details', {'id': event.id}) }}" class="no-decoration">
+    <a href="{{ path('event_details', {'id': event.slug}) }}" class="no-decoration">
         <div class="Widget__header" style="background-image: url({% if restaurantMedia is defined %}{% path restaurantMedia, 'big' %}{% endif %})">
             <div class="align_center_between">
                 <div class="Sticker sm green-opaque left">
