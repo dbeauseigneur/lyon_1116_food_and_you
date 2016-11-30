@@ -42,7 +42,10 @@ monolog:
         #    level:  info
 
 swiftmailer:
-    transport: gmail
-    username:  'dev.soluti@gmail.com'
-    password:  'soluti.dev1'
+    #transport: gmail
+    transport: '%mailer_transport%'
+    #username:  'dev.soluti@gmail.com'
+    username: '%mailer_user%'
+    #password:  'soluti.dev1'
+    password: '%mailer_password%'
     delivery_address: '%delivery_address%'
