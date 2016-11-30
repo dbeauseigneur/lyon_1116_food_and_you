@@ -71,7 +71,7 @@
       </trans-unit>
       <trans-unit id="dfa5be7e620204da91e72a33294e9798" resname="votes">
         <source>votes</source>
-        <target>{0}votes|{1}vote|[2,Inf]votes</target>
+        <target>{0}like|{1}like|[2,Inf]likes</target>
       </trans-unit>
       <trans-unit id="abbdf5f8086f759c80177ec1fba520c2" resname="my.profile">
         <source>my.profile</source>

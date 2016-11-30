@@ -47,11 +47,11 @@
       </trans-unit>
       <trans-unit id="d4ce73238c296ea290d949658c74a3d2" resname="member.applicant-current-recipe.votes">
         <source>member.applicant-current-recipe.votes</source>
-        <target>{0}votes|{1}vote|[2,Inf]votes</target>
+        <target>{0}like|{1}like|[2,Inf]likes</target>
       </trans-unit>
       <trans-unit id="60118da790d301b5009098e4b51c071c" resname="member.applicant-current-recipe.vote.me">
         <source>member.applicant-current-recipe.vote.me</source>
-        <target>Votez pour moi !</target>
+        <target>J'AIME !</target>
       </trans-unit>
       <trans-unit id="adc29a27c3fe14314a4b4d5ee1e7e633" resname="jy.etais">
         <source>jy.etais</source>
