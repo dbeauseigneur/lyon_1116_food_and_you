@@ -125,7 +125,7 @@
                         {% if applied %}
                             <button onclick="displayMessageModal('{{ 'event.already.applied' | trans }}', 'ok');" class="Btn red md round-corners border-white">{{ 'event.apply' | trans }}</button>
                         {% elseif app.user %}
-                            <a href="{{ path('event_apply_to', {'id': event.id}) }}" class="Btn red md round-corners border-white">{{ 'event.apply' | trans }}</a>
+                            <a href="{{ path('event_apply_to', {'slug': event.slug}) }}" class="Btn red md round-corners border-white">{{ 'event.apply' | trans }}</a>
                         {% else %}
                             <button onclick="displayModal('modal_login');" class="Btn red md round-corners border-white">{{ 'event.apply' | trans }}</button>
                         {% endif %}
@@ -189,7 +189,7 @@
                         {% if applied %}
                             <button onclick="displayMessageModal('{{ 'event.already.applied' | trans }}', 'ok');" class="Btn red md round-corners border-white">{{ 'event.apply' | trans }}</button>
                         {% elseif app.user %}
-                            <a href="{{ path('event_apply_to', {'id': event.id}) }}" class="Btn red md round-corners border-white">{{ 'event.apply' | trans }}</a>
+                            <a href="{{ path('event_apply_to', {'slug': event.slug}) }}" class="Btn red md round-corners border-white">{{ 'event.apply' | trans }}</a>
                         {% else %}
                             <button onclick="displayModal('modal_login');" class="Btn red md round-corners border-white">{{ 'event.apply' | trans }}</button>
                         {% endif %}

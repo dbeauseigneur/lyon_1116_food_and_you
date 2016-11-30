@@ -3,7 +3,7 @@
 namespace AppBundle\Entity;
 
 use AppBundle\Entity\Embeddables\Capacity;
-use Cocur\Slugify\Slugify;
+use Gedmo\Mapping\Annotation as Gedmo;
 use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
@@ -40,8 +40,15 @@ class Event
     private $id;
 
     /**
-     *
-     * @ORM\Column(length=255)
+     * **
+     * @Gedmo\Slug(handlers={
+     *      @Gedmo\SlugHandler(class="Gedmo\Sluggable\Handler\RelativeSlugHandler", options={
+     *          @Gedmo\SlugHandlerOption(name="relationField", value="restaurant"),
+     *          @Gedmo\SlugHandlerOption(name="relationSlugField", value="slug"),
+     *          @Gedmo\SlugHandlerOption(name="separator", value="-")
+     *      })
+     * }, separator="-", updatable=true, fields={"startDate"}, dateFormat="d-m-Y")
+     * @ORM\Column(length=255, unique=true)
      */
     private $slug;
 
@@ -152,9 +159,6 @@ class Event
         $this->confirmedReservations = 0;
         $this->notifiedStart = false;
         $this->notifiedMinCapacityNotReached = false;
-        $slugify = new Slugify();
-        $toBeSlugified = $this->getRestaurant()->getName() . ' ' . $this->getStartDate()->format('d-m-Y');
-        $this->slug = $slugify->slugify($toBeSlugified);
     }
 
     public function __toString()
@@ -376,6 +380,10 @@ class Event
         return $votingPossible = in_array($this->getStatus(), [
             Event::STATUS_APPLICANT_REGISTRATION_OPENED,
             Event::STATUS_APPLICANT_REGISTRATION_CLOSED,
+            Event::STATUS_RESERVATIONS_OPENED,
+            Event::STATUS_RESERVATIONS_CLOSED,
+            Event::STATUS_IN_PROGRESS,
+            Event::STATUS_FINISHED
         ]);
     }
 
