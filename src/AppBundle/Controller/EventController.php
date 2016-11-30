@@ -276,31 +276,28 @@ class EventController extends Controller
             $applicants = $applicantRepository->getSelectedApplicants($event);
         };
 
-        $hasEntry = 0;
-        $hasMain = 0;
-        $hasDessert = 0;
-        foreach ($applicants as $applicant) {
-            foreach ($applicant->getRecipes() as $applicantRecipe) {
-                switch ($applicantRecipe->getRecipe()->getType()) {
-                    case Recipe::TYPE_ENTRY:
-                        $hasEntry = 1;
-                        break;
-                    case Recipe::TYPE_MAIN:
-                        $hasMain = 1;
-                        break;
-                    case Recipe::TYPE_DESSERT:
-                        $hasDessert = 1;
-                        break;
-                }
-            }
-        }
+        $eventRepository = $this->get('app.repository.event');
+        If ($eventRepository->hasOneApplicantRecipeOfType ($event,Recipe::TYPE_ENTRY)) {
+            $hasEntry = 1;
+        }else{
+            $hasEntry = 0;
+        };
+        If ($eventRepository->hasOneApplicantRecipeOfType ($event,Recipe::TYPE_MAIN)) {
+            $hasMain = 1;
+        }else{
+            $hasMain = 0;
+        };
+        If ($eventRepository->hasOneApplicantRecipeOfType ($event,Recipe::TYPE_DESSERT)) {
+            $hasDessert = 1;
+        }else{
+            $hasDessert = 0;
+        };
 
         $form = $this->createForm(ApplicationType::class, $application);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            $this->get('app.manager.application')->process($application);
-            $eventRepository = $this->get('app.repository.event');
+
             if ( $eventRepository->hasOneApplicantRecipeOfEach($event)) {
                 $event->setStatus(Event::STATUS_APPLICANT_REGISTRATION_CLOSED);
             } else {
