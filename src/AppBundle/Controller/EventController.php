@@ -296,7 +296,7 @@ class EventController extends Controller
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-
+            $this->get('app.manager.application')->process($application);
             if ( $eventRepository->hasOneApplicantRecipeOfEach($event)) {
                 $event->setStatus(Event::STATUS_APPLICANT_REGISTRATION_CLOSED);
             } else {
