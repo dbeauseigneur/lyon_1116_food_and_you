@@ -31,7 +31,7 @@
       </trans-unit>
       <trans-unit id="4d5b3879684c3640245ce2b151ad42b5" resname="member.applicant-current-recipe.title">
         <source>member.applicant-current-recipe.title</source>
-        <target>Votez pour moi</target>
+        <target>Encouragezmoi !</target>
       </trans-unit>
       <trans-unit id="d59685bde29e9c050c750900a77acaeb" resname="member.applicant-current-recipe.subtitle">
         <source>member.applicant-current-recipe.subtitle</source>
