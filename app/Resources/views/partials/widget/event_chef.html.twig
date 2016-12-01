@@ -58,9 +58,9 @@
     </div>
     <div class="text-center box">
         <a target="_blank" href="https://www.instagram.com/foodandyouofficiel/" class="social"><i class="fa fa-instagram"></i></a>
-        <a href="http://www.facebook.com/sharer.php?u={{ url('event_details', {'id': event.id }) }}%23applicants&title=Découvrez les cuisiniers amateurs du prochain évènement Food%26You ! {{ event.startDate|localizeddate('none', 'none', app.request.locale, null, "d-MMMM-Y") }} / {{ event.restaurant.name }}"
+        <a href="http://www.facebook.com/sharer.php?u={{ url('event_details', {'id': event.slug }) }}%23applicants&title=Découvrez {{ applicant.member.firstName}} au prochain évènement Food%26You ! {{ event.startDate|localizeddate('none', 'none', app.request.locale, null, "d-MMMM-Y") }} / {{ event.restaurant.name }}"
            class="social"><i class="fa fa-facebook"></i></a>
-        <a href="https://twitter.com/share?url={{ url('event_details', {'id': event.id }) }}%2323applicants&text=Découvrez les cuisiniers amateurs du prochain évènement Food%26You ! {{ event.startDate|localizeddate('none', 'none', app.request.locale, null, "d-MMMM-Y") }} / {{ event.restaurant.name }}"
+        <a href="https://twitter.com/share?url={{ url('event_details', {'id': event.slug }) }}%2323applicants&text=Découvrez {{ applicant.member.firstName}} au prochain évènement Food%26You ! {{ event.startDate|localizeddate('none', 'none', app.request.locale, null, "d-MMMM-Y") }} / {{ event.restaurant.name }}"
            class="social"><i class="fa fa-twitter"></i></a>
     </div>
 </div>
