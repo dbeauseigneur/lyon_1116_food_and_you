@@ -172,11 +172,10 @@ class EventController extends Controller
             throw $this->createNotFoundException('Applicant not found');
         }
 
-        if (!in_array(
+        if (in_array(
             $applicant->getEvent()->getStatus(),
             [
-                Event::STATUS_APPLICANT_REGISTRATION_OPENED,
-                Event::STATUS_APPLICANT_REGISTRATION_CLOSED,
+                Event::STATUS_FINISHED,
             ]
         )) {
             throw $this->createAccessDeniedException('Voting is closed');

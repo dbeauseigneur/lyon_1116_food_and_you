@@ -23,7 +23,7 @@
       </trans-unit>
       <trans-unit id="c30d7a0776645b187b3e63d3ea35db22" resname="i.vote">
         <source>i.vote</source>
-        <target>JE VOTE !</target>
+        <target>J'AIME !</target>
       </trans-unit>
     </body>
   </file>
