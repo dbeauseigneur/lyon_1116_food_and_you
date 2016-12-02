@@ -66,17 +66,19 @@
                 </div>
             </div>
         </div>
-        <div class="eventDetails__vote">
-            {% if applicant.id in votedFor %}
-                <i class="fa fa-check-circle-o"></i>
-            {% else %}
-                {% if app.user %}
-                    <button class="Btn green-dark2 border-white xs eventDetails__vote__button" data-applicant-id="{{ applicant.id }}">{{ 'i.vote'|trans }}</button>
+        {% if event.status != constant('AppBundle\\Entity\\Event::STATUS_FINISHED') %}
+            <div class="eventDetails__vote">
+                {% if applicant.id in votedFor %}
+                    <i class="fa fa-check-circle-o"></i>
                 {% else %}
-                    <button class="Btn green-dark2 border-white xs" onclick="displayModal('modal_login');">{{ 'i.vote'|trans }}</button>
+                    {% if app.user %}
+                        <button class="Btn green-dark2 border-white xs eventDetails__vote__button" data-applicant-id="{{ applicant.id }}">{{ 'i.vote'|trans }}</button>
+                    {% else %}
+                        <button class="Btn green-dark2 border-white xs" onclick="displayModal('modal_login');">{{ 'i.vote'|trans }}</button>
+                    {% endif %}
                 {% endif %}
-            {% endif %}
-        </div>
+            </div>
+        {% endif %}
     </div>
     <div class="text-center box">
         <a target="_blank" href="https://www.instagram.com/foodandyouofficiel/" class="social"><i class="fa fa-instagram"></i></a>
