@@ -51,7 +51,7 @@
       </trans-unit>
       <trans-unit id="2ccc02a247cb4b225a3c510c4de74d25" resname="app.member.charte">
         <source>app.member.charte</source>
-        <target><![CDATA[Merci d'accepter la charte Food & You]]></target>
+        <target><![CDATA[Merci d'accepter la charte Food and You]]></target>
       </trans-unit>
       <trans-unit id="6ff439fdb45d5bd0d58e8d210df8be77" resname="fos_user.email.blank">
         <source>fos_user.email.blank</source>

@@ -11,15 +11,15 @@
       </trans-unit>
       <trans-unit id="9d4d8855fe691cbe4e0e8b848fc93541" resname="main.description">
         <source>main.description</source>
-        <target><![CDATA[Planifiez vos soirées Food&You, sélectionnez les candidats qui passeront en cuisine, et développez votre activité !  ]]></target>
+        <target><![CDATA[Planifiez vos soirées Food and You, sélectionnez les candidats qui passeront en cuisine, et développez votre activité !  ]]></target>
       </trans-unit>
       <trans-unit id="550c6b8dbc6e19c8f642723c635f185a" resname="main.button">
         <source>main.button</source>
-        <target><![CDATA[Devenez chef Food&You]]></target>
+        <target><![CDATA[Devenez chef Food and You]]></target>
       </trans-unit>
       <trans-unit id="43de410b5608ad96be1e57a47af97f9b" resname="main1.title">
         <source>main1.title</source>
-        <target><![CDATA[POURQUOI DEVENIR CHEF FOOD&YOU ?]]></target>
+        <target><![CDATA[POURQUOI DEVENIR CHEF FOOD AND YOU ?]]></target>
       </trans-unit>
       <trans-unit id="cde52b49e9a4f46fd4633cb279124c16" resname="main1.description">
         <source>main1.description</source>
@@ -39,7 +39,7 @@
       </trans-unit>
       <trans-unit id="69ba451e5bf3c89d9f6b28101d52782c" resname="main3.description">
         <source>main3.description</source>
-        <target><![CDATA[Découvrez les témoignages de nos chefs Food&You !]]></target>
+        <target><![CDATA[Découvrez les témoignages de nos chefs Food and You !]]></target>
       </trans-unit>
       <trans-unit id="4a7464847fe79a378dcbfc605bdeccb3" resname="block1.title">
         <source>block1.title</source>
@@ -63,15 +63,15 @@
       </trans-unit>
       <trans-unit id="8b3458a8035aca83c86d81f105808d8a" resname="block3.description">
         <source>block3.description</source>
-        <target><![CDATA[Communiquez autrement, gagnez en notoriété et attirez une nouvelle clientèle grâce aux soirées Food&You]]></target>
+        <target><![CDATA[Communiquez autrement, gagnez en notoriété et attirez une nouvelle clientèle grâce aux soirées Food and You]]></target>
       </trans-unit>
       <trans-unit id="683d52b284acf6884ecb6b04d4906e55" resname="block4.title">
         <source>block4.title</source>
-        <target><![CDATA[Planifiez<br>vos soirées Food&You]]></target>
+        <target><![CDATA[Planifiez<br>vos soirées Food and You]]></target>
       </trans-unit>
       <trans-unit id="6b3cd4291cccb85e9b35ef782c02c6f5" resname="block4.description">
         <source>block4.description</source>
-        <target><![CDATA[Décidez des dates de vos prochaines soirées Food&You selon les créneaux que vous souhaitez dynamiser]]></target>
+        <target><![CDATA[Décidez des dates de vos prochaines soirées Food and You selon les créneaux que vous souhaitez dynamiser]]></target>
       </trans-unit>
       <trans-unit id="0d6ea8bb0c5623041f448f9db8e428c2" resname="block5.title">
         <source>block5.title</source>
@@ -79,11 +79,11 @@
       </trans-unit>
       <trans-unit id="1a98b47d4ec166d5574d9a55afdcf64e" resname="block5.description">
         <source>block5.description</source>
-        <target><![CDATA[Choisissez les recettes des cuisiniers amateurs qui vous plaisent et associez les afin de créer le menu Food&You]]></target>
+        <target><![CDATA[Choisissez les recettes des cuisiniers amateurs qui vous plaisent et associez les afin de créer le menu Food and You]]></target>
       </trans-unit>
       <trans-unit id="1dee4ad96c7c3d930e806fe1950fe5f7" resname="block6.title">
         <source>block6.title</source>
-        <target><![CDATA[Ouvrez votre cuisine <br>à la brigade Food&You]]></target>
+        <target><![CDATA[Ouvrez votre cuisine <br>à la brigade Food and You]]></target>
       </trans-unit>
       <trans-unit id="7052aca5429aeaa984db15e42abbff5f" resname="block6.description">
         <source>block6.description</source>
@@ -124,7 +124,7 @@ Aurélie, Séverine et Kiki sont arrivés hyper motivés, prêts à relever le d
       </trans-unit>
       <trans-unit id="f48691816861eb658d7b0b11e52644df" resname="main3.button">
         <source>main3.button</source>
-        <target><![CDATA[Devenez Chef Food&You]]></target>
+        <target><![CDATA[Devenez Chef Food and You]]></target>
       </trans-unit>
     </body>
   </file>

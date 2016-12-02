@@ -31,7 +31,6 @@
         <div class="col-sm-6 hidden-xs">
             <div class="Reservation__title__social">
                 {% if member is defined and app.user == member.authentication %}
-                    <a target="_blank" href="https://www.instagram.com/foodandyouofficiel/" class="social"><i class="fa fa-instagram"></i></a>
                     <a href="http://www.facebook.com/sharer.php?u={{ url('member_profile', {'slug': app.user.member.slug }) }}%23{{ "reservation" ~ event.id }}&title=Venez avec moi, je participe à une soirée insolite Utilisez le code {{ tableCode }} pour être à ma même table."
                        class="social"><i class="fa fa-facebook"></i></a>
                     <a href="https://twitter.com/share?url={{ url('member_profile', {'slug': app.user.member.slug }) }}%23{{ "reservation" ~ event.id }}&text=Venez avec moi, je participe à une soirée insolite Utilisez le code {{ tableCode }} pour être à ma même table."
@@ -67,7 +66,6 @@
     <div class="row">
         <div class="box text-center visible-xs-block">
             {% if member is defined and app.user == member.authentication %}
-                <a target="_blank" href="https://www.instagram.com/foodandyouofficiel/" class="social"><i class="fa fa-instagram"></i></a>
                 <a href="http://www.facebook.com/sharer.php?u={{ url('member_profile', {'slug': app.user.member.slug }) }}%23{{ "reservation" ~ event.id }}&title=Venez avec moi, je participe à une soirée insolite Utilisez le code {{ member.tableCode }} pour être à ma même table."
                    class="social"><i class="fa fa-facebook"></i></a>
                 <a href="https://twitter.com/share?url={{ url('member_profile', {'slug': app.user.member.slug }) }}%23{{ "reservation" ~ event.id }}&text=Venez avec moi, je participe à une soirée insolite Utilisez le code {{ member.tableCode }} pour être à ma même table."

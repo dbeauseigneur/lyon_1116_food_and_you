@@ -51,7 +51,7 @@
       </trans-unit>
       <trans-unit id="b422d5494b31cb4f1d560eaa73999136" resname="restaurant.not_validated">
         <source>restaurant.not_validated</source>
-        <target><![CDATA[Votre restaurant n'a pas encore été validé par le staff Food & You. Vos événements seront visibles une fois cette validation effectuée.]]></target>
+        <target><![CDATA[Votre restaurant n'a pas encore été validé par le staff Food and You. Vos événements seront visibles une fois cette validation effectuée.]]></target>
       </trans-unit>
     </body>
   </file>

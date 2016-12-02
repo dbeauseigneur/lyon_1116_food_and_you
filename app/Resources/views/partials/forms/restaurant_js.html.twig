@@ -6,6 +6,10 @@
             yearRange: "c-90:c",
         });
 
+        if($('#ui-datepicker-div').parents('hasDatepicker').length ==0 ) {
+            $('#ui-datepicker-div').wrap('<div class="hasDatepicker">');
+        }
+
         var setElementPosition = function ($button, position) {
             $button.parent().siblings('input[type=hidden]').val(position);
             if (position === 0) {

@@ -42,14 +42,13 @@ class NotifySendCommand extends ContainerAwareCommand
 
             $result = $RMSnotifier->send($message);
 
-            if ($result) {
-                $notification->setSent(true);
-                $notification->setSendTime(new \DateTime());
+            $notification->setSent(true);
+            $notification->setSendTime(new \DateTime());
+            $notification->setSentWithError(!$result);
 
-                $em->persist($notification);
-                $em->flush();
-                $em->clear();
-            }
+            $em->persist($notification);
+            $em->flush();
+            $em->clear();
         }
 
     }

@@ -13,12 +13,14 @@
         {% endblock %}
         <title>{% block title %}{{ 'homepage.title' | trans({}, 'seo') }}{% endblock %}</title>
         <meta name="google" content="notranslate" />
+	<meta name="p:domain_verify" content="d38f76e6c0f5eadc428b6e47b267d152"/>
         <meta name="description" content="{% block description %}{{ 'homepage.description' | trans({}, 'seo') }}{% endblock %}">
         <link type='text/css' href='{{ asset('css/00-vendor.css') ~ cacheBusting }}' rel='stylesheet' media='screen' />
         <link type='text/css' href='{{ asset('css/01-app.css') ~ cacheBusting }}' rel='stylesheet' media='screen' />
         {% block stylesheets %}{% endblock %}
         <script src="{{ asset('vendor/jquery/dist/jquery.min.js') }}"></script>
         <link rel="icon" type="image/x-icon" href="{{ asset('images/favicon.png') }}" />
+        <link rel="canonical" href="{{ app.request.uri }}" />
     </head>
     <body>
         {% if app.environment == 'prod' %}

@@ -55,6 +55,13 @@ class Notification
     protected $sendTime;
 
     /**
+     * @ORM\Column(name="sent_with_error", type="boolean", nullable=true)
+     *
+     * @var bool
+     */
+    protected $sentWithError;
+
+    /**
      * Notification constructor.
      */
     public function __construct()
@@ -148,5 +155,21 @@ class Notification
     public function setSendTime($sendTime)
     {
         $this->sendTime = $sendTime;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isSentWithError()
+    {
+        return $this->sentWithError;
+    }
+
+    /**
+     * @param boolean $sentWithError
+     */
+    public function setSentWithError($sentWithError)
+    {
+        $this->sentWithError = $sentWithError;
     }
 }

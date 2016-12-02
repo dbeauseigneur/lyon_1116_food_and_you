@@ -19,7 +19,7 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/", name="homepage", options={"sitemap" = true})
      * @Template(template="default/index.html.twig")
      *
      * @return array
@@ -51,7 +51,7 @@ class DefaultController extends Controller
     /**
      * Devenir restaurateur page
      *
-     * @Route("/restaurateur/accueil", name="restaurateur_benefits")
+     * @Route("/restaurateur/accueil", name="restaurateur_benefits", options={"sitemap" = true})
      */
     public function benefitsAction()
     {
@@ -64,7 +64,7 @@ class DefaultController extends Controller
     /**
      * Simulateur CA
      *
-     * @Route("/restaurateur/simulateur", name="restaurateur_simulateur")
+     * @Route("/restaurateur/simulateur", name="restaurateur_simulateur",  options={"sitemap" = true})
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
@@ -90,7 +90,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route(path="/cgu", name="cgu")
+     * @Route(path="/cgu", name="cgu",  options={"sitemap" = true})
      */
     public function cguAction()
     {
@@ -98,7 +98,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route(path="/reglement-du-jeu", name="rules")
+     * @Route(path="/reglement_du_jeu ", name="rules",  options={"sitemap" = true})
      */
     public function rulesAction()
     {
@@ -106,7 +106,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route(path="/qui-sommes-nous", name="about_us")
+     * @Route(path="/qui_sommes_nous", name="about_us",  options={"sitemap" = true})
      */
     public function aboutUsAction()
     {
@@ -114,7 +114,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route(path="/charte", name="charte")
+     * @Route(path="/charte", name="charte",  options={"sitemap" = true})
      */
     public function charteAction()
     {
@@ -122,7 +122,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route(path="/contact", name="contact")
+     * @Route(path="/contact", name="contact",  options={"sitemap" = true})
      *
      * @param Request $request
      *
@@ -162,7 +162,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route(path="/contact-company", name="contact_company")
+     * @Route(path="/contact-company", name="contact_company",  options={"sitemap" = true})
      *
      * @param Request $request
      *

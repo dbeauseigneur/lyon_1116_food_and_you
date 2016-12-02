@@ -24,6 +24,7 @@ class Event
     const STATUS_CANCELLED = 'cancelled';
     const STATUS_FINISHED = 'finished';
 
+    const PRICE_0 = 19.90;
     const PRICE_1 = 29.90;
     const PRICE_2 = 34.90;
     const PRICE_3 = 39.90;
@@ -164,8 +165,8 @@ class Event
     public function __toString()
     {
         return $this->getRestaurant() instanceof Restaurant ?
-            sprintf("%s - %s", $this->getRestaurant()->getName(), $this->getStartDate()->format('d/m/Y')) :
-            $this->getStartDate()->format('d/m/Y');
+            sprintf("%s - %s", $this->getRestaurant()->getName(), $this->getStartDate() ? $this->getStartDate()->format('d/m/Y') : '') :
+            $this->getStartDate() ? $this->getStartDate()->format('d/m/Y') : '';
     }
 
     /**
@@ -240,6 +241,7 @@ class Event
         if (!in_array(
             $price,
             array(
+                self::PRICE_0,
                 self::PRICE_1,
                 self::PRICE_2,
                 self::PRICE_3,
@@ -403,6 +405,7 @@ class Event
     public static function getPrices()
     {
         return array(
+            number_format(self::PRICE_0, 2, '.', '') => number_format(self::PRICE_0, 2, ',', '.'),
             number_format(self::PRICE_1, 2, '.', '') => number_format(self::PRICE_1, 2, ',', '.'),
             number_format(self::PRICE_2, 2, '.', '') => number_format(self::PRICE_2, 2, ',', '.'),
             number_format(self::PRICE_3, 2, '.', '') => number_format(self::PRICE_3, 2, ',', '.')

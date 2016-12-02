@@ -19,7 +19,7 @@
       </trans-unit>
       <trans-unit id="55872ab598ac2d2f6f11c2d7dec3026b" resname="error500.desc">
         <source>error500.desc</source>
-        <target><![CDATA[Erreur interne du serveur. La brigade Food & You essaye de gérer toutes vos demandes en même temps :)]]></target>
+        <target><![CDATA[Erreur interne du serveur. La brigade Food and You essaye de gérer toutes vos demandes en même temps :)]]></target>
       </trans-unit>
       <trans-unit id="2f8a6bf31f3bd67bd2d9720c58b19c9a" resname="contact">
         <source>contact</source>

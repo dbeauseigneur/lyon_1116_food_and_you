@@ -113,3 +113,6 @@ knp_paginator:
 
 ornicar_gravatar:
     size: 200
+
+presta_sitemap:
+    dumper_base_url: %presta_sitemap_dumper_base_url%

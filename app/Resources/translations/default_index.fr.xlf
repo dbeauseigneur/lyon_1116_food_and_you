@@ -7,7 +7,7 @@
     <body>
       <trans-unit id="7d9be5374df9916234e672ec532ed7d0" resname="soir_resto.title">
         <source>soir_resto.title</source>
-        <target><![CDATA[FOOD & YOU : COMMENT ÇA MARCHE ?]]></target>
+        <target><![CDATA[FOOD AND YOU : COMMENT ÇA MARCHE ?]]></target>
       </trans-unit>
       <trans-unit id="6926c53bb2cb2eb8948d6d8dc6760ee8" resname="soir_resto.description">
         <source>soir_resto.description</source>
@@ -31,11 +31,11 @@
       </trans-unit>
       <trans-unit id="f9e99ac6fec226e89e975dc365315a8c" resname="soir_resto.reason3.title">
         <source>soir_resto.reason3.title</source>
-        <target><![CDATA[Les critiques Food & You notent votre recette]]></target>
+        <target><![CDATA[Les critiques Food and You notent votre recette]]></target>
       </trans-unit>
       <trans-unit id="12dbfdbaa21b23c04b4448c631b42423" resname="soir_resto.reason3.description">
         <source>soir_resto.reason3.description</source>
-        <target><![CDATA[Grâce à notre application mobile, les critiques Food&You dégustent votre recette et vivent une expérience culinaire inédite]]></target>
+        <target><![CDATA[Grâce à notre application mobile, les critiques Food and You dégustent votre recette et vivent une expérience culinaire inédite]]></target>
       </trans-unit>
       <trans-unit id="f1652308cd410e398ef00e6603434bbb" resname="promochef.event_btn">
         <source>promochef.event_btn</source>
@@ -49,7 +49,7 @@
       </trans-unit>
       <trans-unit id="b65f1d7573e21f0ba8d49956247fa3ca" resname="promoevents.event_btn">
         <source>promoevents.event_btn</source>
-        <target><![CDATA[Devenez Critique Food&You]]></target>
+        <target><![CDATA[Devenez Critique Food and You]]></target>
       </trans-unit>
       <trans-unit id="5a7c1f56a9ca9d55d52a5c3ce5d23def" resname="promoevents.desc">
         <source>promoevents.desc</source>
@@ -63,7 +63,7 @@
       </trans-unit>
       <trans-unit id="9952ee99f73c5f69ad52a7ddb1d9acc0" resname="promocommunity.title1">
         <source>promocommunity.title1</source>
-        <target><![CDATA[Rejoignez<br>la communauté Food&You]]></target>
+        <target><![CDATA[Rejoignez<br>la communauté Food and You]]></target>
       </trans-unit>
       <trans-unit id="d77ab3b2fc3a3fabcfdc677b11ec3f36" resname="promocommunity.title2">
         <source>promocommunity.title2</source>
@@ -121,7 +121,7 @@
       </trans-unit>
       <trans-unit id="428038a24fba1d01f4a78e15a1070f11" resname="homepage.play">
         <source>homepage.play</source>
-        <target><![CDATA[Food & You en vidéo !]]></target>
+        <target><![CDATA[Food and You en vidéo !]]></target>
       </trans-unit>
     </body>
   </file>

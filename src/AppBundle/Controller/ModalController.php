@@ -29,7 +29,7 @@ class ModalController extends Controller
     public function simpleAction($template)
     {
         if (!in_array($template, $this->simpleTemplates)) {
-            return $this->createNotFoundException();
+            throw $this->createNotFoundException();
         }
 
         $template = str_replace('-', '_', $template);
@@ -101,7 +101,7 @@ class ModalController extends Controller
         $user = $this->getUser();
 
         if (!$user) {
-            return $this->createAccessDeniedException();
+            throw $this->createAccessDeniedException();
         }
 
         $member = $user->getMember();

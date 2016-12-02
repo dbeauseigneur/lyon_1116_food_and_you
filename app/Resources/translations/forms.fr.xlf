@@ -19,7 +19,7 @@
       </trans-unit>
       <trans-unit id="1f0dbd015590ef42700f44ad806a307a" resname="forms.search.participate_as.visitor">
         <source>forms.search.participate_as.visitor</source>
-        <target><![CDATA[Critique Food&You]]></target>
+        <target><![CDATA[Critique Food and You]]></target>
       </trans-unit>
       <trans-unit id="a63f8c3fa6571301a82069141d0ee587" resname="forms.search.participate_as.cook">
         <source>forms.search.participate_as.cook</source>

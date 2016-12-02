@@ -7,7 +7,7 @@
     <body>
       <trans-unit id="ae2c362801617fa469468e36983e6e79" resname="welcome.to.my.page">
         <source>welcome.to.my.page</source>
-        <target><![CDATA[Bienvenue sur ma page profil Food & You]]></target>
+        <target><![CDATA[Bienvenue sur ma page profil Food and You]]></target>
       </trans-unit>
       <trans-unit id="8748b3802aa69e6236db60f243dbbba5" resname="participations">
         <source>participations</source>

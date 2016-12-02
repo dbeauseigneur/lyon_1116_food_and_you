@@ -25,7 +25,7 @@ use Symfony\Component\HttpFoundation\Request;
 class EventController extends Controller
 {
     /**
-     * @Route("/evenement/liste", name="event_list", options={"expose"=true})
+     * @Route("/evenement/liste", name="event_list", options={"expose"=true, "sitemap" = true})
      *
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
@@ -144,7 +144,7 @@ class EventController extends Controller
     }
 
     /**
-     * @Route("/evenement/vote", name="event_applicant_vote", options={"expose"=true})
+     * @Route("/evenement/vote", name="event_applicant_vote", options={"expose"=true, "sitemap" = true})
      *
      * @param Request $request
      * @return JsonResponse
@@ -240,7 +240,7 @@ class EventController extends Controller
         $member = $this->getUser()->getMember();
 
         if ($reservation->getMember()->getId() !== $member->getId()) {
-            return $this->createAccessDeniedException();
+            throw $this->createAccessDeniedException();
         }
 
         /**
@@ -337,7 +337,7 @@ class EventController extends Controller
     public function photoAction(Request $request, Event $event)
     {
         if (!$request->isXmlHttpRequest()) {
-            return $this->createAccessDeniedException();
+            throw $this->createAccessDeniedException();
         }
 
         $filter = new PaginateFilter($request->request->all());

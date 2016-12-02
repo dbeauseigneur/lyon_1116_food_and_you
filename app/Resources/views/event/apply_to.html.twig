@@ -334,7 +334,11 @@
                                 });
                                 list.css("maxHeight", Math.floor( $(window).height() * 0.8 ) + "px");
                                 list.css("overflow", "auto");
-                                list.append(data);
+                                if(data.length == 0) {
+                                    list.append('{{ "event.apply_to.recipes.list.empty"|trans({},'event_apply_to') }}');
+                                } else {
+                                    list.append(data);
+                                }
                                 modal.content(list);
                                 modal.recenter();
                                 console.log(modal, data);

@@ -11,11 +11,11 @@
       </trans-unit>
       <trans-unit id="119767c0856098ddfe1475f05407c16d" resname="calculator.description">
         <source>calculator.description</source>
-        <target><![CDATA[Food & You vous propose de<br><strong>BOOSTEZ VOTRE CHIFFRE D’AFFAIRES</strong><br>en optimisant vos <strong>périodes creuses</strong>]]></target>
+        <target><![CDATA[Food and You vous propose de<br><strong>BOOSTEZ VOTRE CHIFFRE D’AFFAIRES</strong><br>en optimisant vos <strong>périodes creuses</strong>]]></target>
       </trans-unit>
       <trans-unit id="1a9bde89a13738c42eb558b48b79bb37" resname="price.label">
         <source>price.label</source>
-        <target><![CDATA[Tarif Food&You appliqué]]></target>
+        <target><![CDATA[Tarif Food and You appliqué]]></target>
       </trans-unit>
       <trans-unit id="a73a6bf2d89983f2d75a4e7be04a62b5" resname="price.description">
         <source>price.description</source>
@@ -27,7 +27,7 @@
       </trans-unit>
       <trans-unit id="7cd53424262557b8044e22f173dae4e8" resname="frequency.description">
         <source>frequency.description</source>
-        <target><![CDATA[Déterminez le nombre de soirées Food&You que vous souhaitez organiser]]></target>
+        <target><![CDATA[Déterminez le nombre de soirées Food and You que vous souhaitez organiser]]></target>
       </trans-unit>
       <trans-unit id="fb7e915f67fe651710f50c9f21768109" resname="places.label">
         <source>places.label</source>
@@ -67,7 +67,7 @@
       </trans-unit>
       <trans-unit id="3ead236afd4b769c1c0daca00c4f0be9" resname="price.by">
         <source>price.by</source>
-        <target><![CDATA[par Food & You (*)]]></target>
+        <target><![CDATA[par Food and You (*)]]></target>
       </trans-unit>
       <trans-unit id="d11f532d7fddf3d3fc7d8641127f2ae6" resname="price.calulated.desc">
         <source>price.calulated.desc</source>
@@ -80,6 +80,10 @@
       <trans-unit id="0aa39d0a93b6e037818dac5c7694afa7" resname="calculator.button.next">
         <source>calculator.button.next</source>
         <target>Etape suivante</target>
+      </trans-unit>
+      <trans-unit id="4ca082779a83bffb89fdf56ca90877d1" resname="price0.value.label">
+        <source>price0.value.label</source>
+        <target><![CDATA[19,90 &euro;]]></target>
       </trans-unit>
     </body>
   </file>

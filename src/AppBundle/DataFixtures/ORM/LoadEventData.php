@@ -65,6 +65,7 @@ class LoadEventData extends AbstractFixture implements OrderedFixtureInterface
     private function getRandomPriceCategory()
     {
         $priceCategories = array(
+            Event::PRICE_0,
             Event::PRICE_1,
             Event::PRICE_2,
             Event::PRICE_3,
