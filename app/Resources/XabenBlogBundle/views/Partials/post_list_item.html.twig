@@ -1,0 +1,51 @@
+{% trans_default_domain 'blog' %}
+
+{% block meta %}
+    <meta property="og:description" content="{{ post.description | striptags | truncate(50) }}" />
+    {% if post.cover %}
+        <meta property="og:image" content="{{ app.request.getSchemeAndHttpHost() }}{%- path post.cover, 'default' -%}" />
+    {% endif %}
+
+    <meta property="og:locale" content="fr_FR"/>
+    <meta property="og:image:width" content="265"/>
+    <meta property="og:image:height" content="265"/>
+{% endblock %}
+
+
+<div class="col-md-4 col-sm-6">
+    <article class="BlogItem">
+        <header>
+            {% if post.cover %}
+                <a href="{{ path('xaben_blog_post', {'id': post.id, 'slug': post.slug, 'month': post.published|date('m'), 'year': post.published|date('Y')}) }}">
+                    <div class="BlogItem__image" style="background-image: url({% path post.cover, 'default' %})"> </div>
+                </a>
+            {% endif %}
+            <time datetime="{{ post.published | date("c") }}" class="BlogItem__time">{{ post.published |localizeddate('none', 'none', app.request.locale, null, "d-MMMM-Y") }}</time>
+            <h4 class="h4 BlogItem__title">
+                <a href="{{ path('xaben_blog_post', {'id': post.id, 'slug': post.slug, 'month': post.published|date('m'), 'year': post.published|date('Y')}) }}">{{ post.title }}</a>
+            </h4>
+            <hr class="at40"/>
+        </header>
+        <div class="BlogItem__description">
+            {{ post.description|raw }}
+        </div>
+        <footer>
+            <a class="Btn green opaque xs BlogItem__btn" href="{{ path('xaben_blog_post', {'id': post.id, 'slug': post.slug, 'month': post.published|date('m'), 'year': post.published|date('Y')}) }}">
+                {{ 'read_more' | trans }}
+            </a>
+            <div class="BlogItem__social">
+                <a href="http://www.facebook.com/sharer.php?u={{ url('xaben_blog_post', {'id': post.id, 'slug': post.slug, 'month': post.published|date('m'), 'year': post.published|date('Y')}) }}&title={{ post.title }}"
+                   class="social"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com/share?url={{ url('xaben_blog_post', {'id': post.id, 'slug': post.slug, 'month': post.published|date('m'), 'year': post.published|date('Y')}) }}&text={{ post.title }}"
+                   class="social"><i class="fa fa-twitter"></i></a>
+            </div>
+        </footer>
+    </article>
+</div>
+{% if loop.index % 3 == 0 %}
+    <div class="clearfix hidden-sm"></div>
+{% endif %}
+
+{% if loop.index % 2 == 0 %}
+    <div class="clearfix visible-sm"></div>
+{% endif %}
