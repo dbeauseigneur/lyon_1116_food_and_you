@@ -18,8 +18,8 @@
                             {# @var restaurant \AppBundle\Entity\Restaurant #}
                             {% for restaurant in page %}
                                 <li data-img="{% path restaurant.gallery.getCover, 'big' %}"
-                                    data-link="{{ path('restaurant_details', {'id': restaurant.id}) }}">
-                                    <a target="_blank" href="{{ path('restaurant_details', {'id': restaurant.id}) }}">
+                                    data-link="{{ path('restaurant_details', {'slug': restaurant.slug}) }}">
+                                    <a target="_blank" href="{{ path('restaurant_details', {'slug': restaurant.slug}) }}">
                                         {{ restaurant.name }}
                                     </a>
                                 </li>
