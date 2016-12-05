@@ -51,7 +51,7 @@ registration:
             Pour valider votre compte utilisateur, merci de vous rendre sur %confirmationUrl%
 
             Cordialement,
-            L'équipe Food & You.
+            L'équipe Food and You.
 
 # Password resetting
 resetting:
@@ -70,7 +70,7 @@ resetting:
         error: Une erreur est survenue. Merci de réessayer.
         success: Le mot de passe a été réinitialisé avec succès
     email:
-        subject: Réinitialisation Food & You
+        subject: Réinitialisation Food and You
         message: |
             Bonjour,
 
@@ -84,7 +84,7 @@ resetting:
 
             Ceci va réinitialiser votre mot de passe. Vous pourrez ensuite vous connecter et le changer pour mieux vous en souvenir.
             Cordialement,
-            L'équipe Food & You
+            L'équipe Food and You
 
 # Global strings
 layout:
@@ -116,5 +116,5 @@ header:
     register: Inscrivez-vous maintenant
 
 cgu: J'ai lu et accepté les <a href="%url%" target="_blank">CGU </a>
-accept: J'ai lu et accepté la <a href="%url%" target="_blank">charte Food & You</a>
+accept: J'ai lu et accepté la <a href="%url%" target="_blank">charte Food and You</a>
 reset: OOPS ! mot de passe oublié ?

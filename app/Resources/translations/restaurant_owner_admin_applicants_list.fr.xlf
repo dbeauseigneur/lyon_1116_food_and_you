@@ -67,7 +67,7 @@
       </trans-unit>
       <trans-unit id="65ab10d02a0d5f7dbbadf267bd40ed5e" resname="app.owner_admin.applicant.list.subtitle">
         <source>app.owner_admin.applicant.list.subtitle</source>
-        <target><![CDATA[Choisissez une entrée, un plat et un dessert pour votre soirée Food&You.]]></target>
+        <target><![CDATA[Choisissez une entrée, un plat et un dessert pour votre soirée Food and You.]]></target>
       </trans-unit>
     </body>
   </file>

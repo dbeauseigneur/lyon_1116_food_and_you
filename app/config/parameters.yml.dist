@@ -45,3 +45,5 @@ parameters:
     push.certificates.ios:             ~
     push.certificates.passphrase.ios:  ~
     push.sandbox: true
+
+    presta_sitemap_dumper_base_url: "https://www.foodandyou.fr/"

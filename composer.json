@@ -14,6 +14,10 @@
         {
             "type": "vcs",
             "url": "https://bitbucket.org/xaben/xabenblogbundle.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/sidz/SonataMediaBundle.git"
         }
     ],
     "require": {
@@ -28,7 +32,7 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "friendsofsymfony/user-bundle": "~2.0@alpha",
         "sonata-project/doctrine-orm-admin-bundle": "~2.3",
-        "sonata-project/media-bundle": "~2.3",
+        "sonata-project/media-bundle": "2.3.x-dev",
         "hwi/oauth-bundle": "0.4.*",
         "xaben/blog-bundle": "dev-master",
         "tilleuls/ckeditor-sonata-media-bundle": "dev-master",
@@ -38,7 +42,8 @@
         "ornicar/gravatar-bundle" : "~1.0",
         "doctrine/doctrine-migrations-bundle": "^1.0",
         "stof/doctrine-extensions-bundle": "^1.2",
-        "richsage/rms-push-notifications-bundle": "~0.1.9"
+        "richsage/rms-push-notifications-bundle": "~0.1.9",
+        "presta/sitemap-bundle": "v1.4.2"
     },
     "require-dev": {
         "sensio/generator-bundle": "3.0.0 as 2.3.99",

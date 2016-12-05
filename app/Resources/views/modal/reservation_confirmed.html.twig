@@ -8,7 +8,6 @@
             <p class="text-center"><strong>{{ member.tableCode }}</strong></p>
         {% endif %}
         <p class="text-center">
-            <a target="_blank" href="https://www.instagram.com/foodandyouofficiel/" class="social"><i class="fa fa-instagram"></i></a>
             <a href="http://www.facebook.com/sharer.php?u={{ url('member_profile', {'slug': member.slug }) }}%23{{ "reservation" ~ reservation.event.id }}&title=Venez avec moi, je participe à une soirée insolite Utilisez le code {{ reservation.tableOwner.tableCode }} pour être à ma même table."
                class="social"><i class="fa fa-facebook"></i></a>
             <a href="https://twitter.com/share?url={{ url('member_profile', {'slug': member.slug }) }}%23{{ "reservation" ~ reservation.event.id }}&text=Venez avec moi, je participe à une soirée insolite Utilisez le code {{ reservation.tableOwner.tableCode }} pour être à ma même table."

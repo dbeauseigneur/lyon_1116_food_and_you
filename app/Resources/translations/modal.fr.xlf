@@ -15,7 +15,7 @@
       </trans-unit>
       <trans-unit id="294c3fa89086758ec75ad22dda72d9bd" resname="modal.reservation_confirmed.title">
         <source>modal.reservation_confirmed.title</source>
-        <target><![CDATA[Réservation Food & You enregistrée !]]></target>
+        <target><![CDATA[Réservation Food and You enregistrée !]]></target>
       </trans-unit>
       <trans-unit id="d949afe7332e9bb21979e24fcc92aa83" resname="modal.reservation_confirmed.message">
         <source>modal.reservation_confirmed.message</source>

@@ -50,23 +50,16 @@
 .Site__header--benefits__description {
     color: #FFF;
 
-    .h3{
+    & h1{
         text-align: left;
     }
 }
 
 @media (max-width: @grid-sm-max) {
-    .Site__header--benefits__icon {
-        display: none;
-    }
-
     .Site__header--benefits__description {
         text-align: center;
         .h3{
             text-align: center;
-        }
-        p{
-            text-align: left;
         }
     }
 }
@@ -75,10 +68,10 @@
 .Site__header--video {
     height: 46.4375rem;
     background-color: rgba(0, 0, 0, 0.4);
-    h1, h4 {
+    h1, .h4 {
         color: @color-white;
     }
-    h4 {
+    .h4 {
         font-size: 1.5rem;
         font-weight: 200;
         line-height: 1.875rem;
@@ -205,6 +198,10 @@
     .Site__header--default {
         height: 13rem;
     }
+
+    .Site__header--benefits__row {
+        margin-top: 0rem;
+    }
 }
 
 @media (min-width: @grid-md) {
@@ -216,6 +213,14 @@
 @media (max-width: @grid-md-max){
     .Site__header-description {
         margin-top: 3.813rem;
+    }
+    .Site__header--benefits__icon {
+        display: none;
+    }
+
+    .Site__header--benefits__description h1,
+    .Site__header--benefits__description {
+        text-align: center;
     }
 }
 

@@ -7,7 +7,7 @@
     <body>
       <trans-unit id="ac710f24d5302429823f299fe025f707" resname="event.list.title">
         <source>event.list.title</source>
-        <target><![CDATA[Trouver une soirée FOOD & YOU]]></target>
+        <target><![CDATA[Trouver une soirée Food and You]]></target>
       </trans-unit>
     </body>
   </file>

@@ -740,4 +740,21 @@ class EventRepository extends EntityRepository
 
         return $qb->getQuery()->getResult();
     }
+
+
+    /**
+     * Sitemap
+     *
+     * Get all events ids
+     *
+     * @return array
+     */
+    public function getEventsIds(){
+
+        $qb = $this->createQueryBuilder('e')
+            ->select('e.id');
+
+        return $qb->getQuery()->getArrayResult();
+    }
+
 }

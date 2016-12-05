@@ -35,7 +35,7 @@
       </trans-unit>
       <trans-unit id="688e3a82cbc3fad4cc993012a313c488" resname="event.apply_to.biography.description">
         <source>event.apply_to.biography.description</source>
-        <target><![CDATA[Notre conseil : laissez aller votre imagination comme vous pouvez le faire en cuisine et augmentez ainsi votre notoriété chez Food&You ! ]]></target>
+        <target><![CDATA[Notre conseil : laissez aller votre imagination comme vous pouvez le faire en cuisine et augmentez ainsi votre notoriété chez Food and You ! ]]></target>
       </trans-unit>
       <trans-unit id="cb1e1c3d568b250fdfbb4f57b39a7809" resname="event.apply_to.signature.title">
         <source>event.apply_to.signature.title</source>
@@ -59,7 +59,7 @@
       </trans-unit>
       <trans-unit id="d6e3de88f2e72eb6bc4cc1a8283ced22" resname="event.apply_to.cook_with.description">
         <source>event.apply_to.cook_with.description</source>
-        <target><![CDATA[Sélectionnez des cuisiniers amateurs inscrits au même événement pour partager avec eux cet atelier culinaire hors du commun.<br>
+        <target><![CDATA[Sélectionnez des cuisiniers amateurs Food and You pour partager avec eux cet atelier culinaire hors du commun.<br>
           N’oubliez pas que pour la constitution des équipes et du menu, le chef a le dernier mot !]]></target>
       </trans-unit>
       <trans-unit id="269ce492e6383ea69ce4afa1483d85a5" resname="add.second.cook">
@@ -133,6 +133,10 @@
       <trans-unit id="379ae74cff7c4138ddca9ae31322d35f" resname="event.apply_to.recipe_type_choosen">
         <source>event.apply_to.recipe_type_choosen</source>
         <target>Plat(s) déjà choisi(s) :</target>
+      </trans-unit>
+      <trans-unit id="92f18d9b7ece2a9acecfa23a8a52c5ae" resname="event.apply_to.recipes.list.empty">
+        <source>event.apply_to.recipes.list.empty</source>
+        <target>Pas de recettes disponibles</target>
       </trans-unit>
     </body>
   </file>
