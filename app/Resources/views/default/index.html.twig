@@ -60,20 +60,24 @@
                 <div class="Promo__hidden">
                     <div class="Promo__content text-center">
                         <p>{{ 'promochef.desc' | trans }} </p>
-                        <button class="Btn green-dark2 md border-white round-corners gouteurs"> {{ 'promochef.event_btn' | trans }} </button>
+                        <button class="Btn green-dark2 md border-white round-corners gouteurs">
+                            {{ 'promochef.event_btn' | trans }}
+                        </button>
                     </div>
                 </div>
             </div>
             <div class="col-sm-6 Promo__events">
                 <div class="Promo__show">
                     <div class="Promo__content text-center">
-                        <button class="Btn green semi-transparent lg"> {{ 'promoevents.event_btn' | trans }} </button>
+                        <button class="Btn green semi-transparent lg">{{ 'promoevents.event_btn' | trans }}</button>
                     </div>
                 </div>
                 <div class="Promo__hidden">
                     <div class="Promo__content text-center">
                         <p>{{ 'promoevents.desc' | trans | raw }}</p>
-                        <button class="Btn green-dark2 md border-white round-corners amateurs"> {{ 'promoevents.btn' | trans }} </button>
+                        <button class="Btn green-dark2 md border-white round-corners amateurs">
+                            {{ 'promoevents.btn' | trans }}
+                        </button>
                     </div>
                 </div>
             </div>
@@ -82,23 +86,25 @@
     <div class="container-fluid Promo__community box-lg">
         <div class="Promo__content text-center">
             <div class="container">
-                <div class="Promo__community--logo-desktop">
-                    <span><h3 class="text-right">{{ 'promocommunity.title1' | trans | raw }}</h3></span>
-                    <span class="Promo__community--logo-web">
-                        <a href="javascript:void(0);">
-                            <img class="" src="images/logo.png">
-                        </a>
-                    </span>
-                    <span><h3 class="text-left">{{ 'promocommunity.title2' | trans | raw }}</h3></span>
-                </div>
                 <div class="Promo__community--logo-mobile">
-                    <span><h5 class="text-center">{{ 'promocommunity.title1' | trans | raw }}</h5></span>
+                    <span><h5 class="text-center">{{ 'promocommunity.title1' | trans | raw }}</h5>
+                    </span>
                     <span class="Promo__community--logo-web">
                         <a href="javascript:void(0);">
                             <img class="" src="images/logo.png">
                         </a>
                     </span>
                     <span><h5 class="text-center">{{ 'promocommunity.title2' | trans | raw }}</h5></span>
+                </div>
+                <div class="Promo__community--logo-desktop">
+                    <span><h3 class="text-right">{{ 'promocommunity.title1' | trans | raw }}</h3>
+                    </span>
+                    <span class="Promo__community--logo-web">
+                        <a href="javascript:void(0);">
+                            <img class="" src="images/logo.png">
+                        </a>
+                    </span>
+                    <span><h3 class="text-left">{{ 'promocommunity.title2' | trans | raw }}</h3></span>
                 </div>
                 <p>{{ 'promocommunity.desc' | trans | raw }}</p>
                 {% if app.user %}
@@ -116,17 +122,17 @@
             <div class="text-center">{{ 'homepage.last.events.description' | trans }}</div>
         </div>
         {% if upcomingEvents %}
-        <div class="row box">
-            {% for upcomingEvent in upcomingEvents %}
-                <div class="col-lg-4">
-                    {% include ':partials/widget:event.html.twig' with {'event': upcomingEvent} %}
-                </div>
-            {% endfor %}
-        </div>
-        <div class="text-center">
-            <a class="Btn sm wide border-black"
-               href="{{ path('event_list') }}">{{ 'homepage.last.events.more'|trans }}</a>
-        </div>
+            <div class="row box">
+                {% for upcomingEvent in upcomingEvents %}
+                    <div class="col-lg-4">
+                        {% include ':partials/widget:event.html.twig' with {'event': upcomingEvent} %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="text-center">
+                <a class="Btn sm wide border-black"
+                   href="{{ path('event_list') }}">{{ 'homepage.last.events.more'|trans }}</a>
+            </div>
         {% else %}
             {% if app.user and app.user.member.restaurants|length > 0 %}
                 {% set eventsNotFoundUrl = path('restaurant_owner_admin_event_new') %}
@@ -156,32 +162,32 @@
     <div class="container-fluid BlogPost--home__image" style="background-image: url({% path blogPost.cover, 'default' %})"></div>
     <div class="container-fluid BlogPost--home box-lg box-gray">
         <div class="container">
-            <div class="row box">
-                <div class="col-xs-12">
-                    <h4 class="text-left">
+                <div class="row box">
+                    <div class="col-xs-12">
+                        <h3 class="text-left">
+                            <a href="{{ path('xaben_blog_post', {
+                                'id': blogPost.id,
+                                'slug': blogPost.slug,
+                                'month': blogPost.published|date('m'),
+                                'year': blogPost.published|date('Y')
+                            }) }}">
+                                {{ blogPost.title }}
+                            </a>
+                        </h3>
+                        <hr class="at40 dark-gray">
+                        <div>
+                           {{ blogPost.description| striptags | truncate(500) | raw }}
+                        </div>
+                        <hr class="at40 dark-gray">
                         <a href="{{ path('xaben_blog_post', {
                             'id': blogPost.id,
                             'slug': blogPost.slug,
                             'month': blogPost.published|date('m'),
                             'year': blogPost.published|date('Y')
-                        }) }}">
-                            {{ blogPost.title }}
-                        </a>
-                    </h4>
-                    <hr class="at40 dark-gray">
-                    <div>
-                       {{ blogPost.description| striptags | truncate(500) | raw }}
+                        }) }}" class="text-bold text-capitalize">{{ 'blog.read_more' | trans }}</a>
                     </div>
-                    <hr class="at40 dark-gray">
-                    <a href="{{ path('xaben_blog_post', {
-                        'id': blogPost.id,
-                        'slug': blogPost.slug,
-                        'month': blogPost.published|date('m'),
-                        'year': blogPost.published|date('Y')
-                    }) }}" class="text-bold text-capitalize">{{ 'blog.read_more' | trans }}</a>
+                    <div class="clearfix visible-sm"></div>
                 </div>
-                <div class="clearfix visible-sm"></div>
-            </div>
             <div class="row box">
                 <div class="col-xs-12 text-center">
                     <a href="{{ path('xaben_blog_homepage') }}"

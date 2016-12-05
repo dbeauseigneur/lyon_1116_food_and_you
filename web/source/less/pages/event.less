@@ -39,8 +39,11 @@
 
     display: flex;
     flex-wrap: nowrap;
+    margin-bottom: 2px;
+    text-align: center;
+
     .hour {
-        margin-right: 0.5rem;
+        margin: 0 2px 0 0;
     }
 
     .price, .hour {
@@ -49,6 +52,7 @@
         background-color: @color-grey;
         padding: 0.5rem;
         flex-grow: 1;
+        width: 100%;
 
         .sprite {
             margin: 0.7rem 0;
@@ -76,7 +80,7 @@
     background-color: @color-green-opaque;
     //padding: 0.5rem 0;
     //margin: 0.5rem 0;
-    border-bottom: 1px solid #FFF;
+    border-bottom: 2px solid #FFF;
     display: flex;
     color: #FFF;
     width: 100%;
@@ -258,7 +262,7 @@
         .Widget__description {
             height: 12.5rem;
             overflow: hidden;
-            h4 {
+            .h4 {
                 font-size: 1.1rem;
                 padding: 0.6rem 0.7rem;
                 line-height: 1.5rem;
@@ -407,4 +411,16 @@ label.groupRadioButton {
 
 #NewEvent__datepicker {
     display: inline-block;
+}
+
+@media (max-width: @grid-sm-max) {
+    .NewEvent__details {
+        text-align: center;
+
+        .RadioToolbar {
+            .control-group {
+                margin: 0 auto;
+            }
+        }
+    }
 }

@@ -7,7 +7,7 @@
 
 {% block meta %}
     <meta property="og:image" content="{% if member.photo %}{% path member.photo, 'default' %}{% else %}{{ gravatar(member.authentication.email) }}{% endif %}"/>
-    <meta property="og:description" content="{{ member.firstName }} participe bientôt à un évènement Food&You. Venez nombreux ! Les cuisiner amateur ont besoin de votre soutien ! Venez goûter leurs recettes."/>
+    <meta property="og:description" content="{{ member.firstName }} participe bientôt à un évènement Food and You. Venez nombreux ! Nos cuisiniers amateurs ont besoin de votre soutien ! Venez goûter leurs recettes."/>
 
     <meta property="og:locale" content="fr_FR"/>
     <meta property="og:image:width" content="265"/>
@@ -48,12 +48,12 @@
             </div>
             <div class="col-sm-9">
                 <div class="memberProfile__name__block align_center_between">
-                    <h2 class="memberProfile__name">
+                    <h1 class="memberProfile__name">
                         <span class="first">{{ member.firstName }}</span>
                         {% if app.user is not null and app.user.member == member %}
                             {{ member.lastName }}
                         {% endif %}
-                    </h2>
+                    </h1>
                     {% if app.user and app.user.member.id == member.id %}
                         <button onclick="displayModal('modal_simple', {'template': 'member-edit'});"
                                 class="Btn green xs">{{ "member.edit"|trans({}, "member_profile") }}</button>
@@ -203,12 +203,10 @@
                                                     {{ "member.applicant-current-recipe.vote.me"|trans({}, "member_profile") }}
                                                 </button>
                                             {% endif %}
-
                                         </div>
                                     {% endfor %}
                                 </div>
                                 <div class="col-sm-12 box text-center">
-                                    <a target="_blank" href="https://www.instagram.com/foodandyouofficiel/" class="social"><i class="fa fa-instagram"></i></a>
                                     {% if app.user == member.authentication %}
                                         <a href="http://www.facebook.com/sharer.php?u={{ url('member_profile', {'slug': app.user.member.slug }) }}%23{{ "recipe" ~ event.id }}&title=Votez pour moi :)"
                                            class="social"><i class="fa fa-facebook"></i></a>
@@ -255,7 +253,6 @@
                         </div>
                         <div class="col-sm-6 hidden-xs">
                             <div class="Reservation__title__social">
-                                <a target="_blank" href="https://www.instagram.com/foodandyouofficiel/" class="social"><i class="fa fa-instagram"></i></a>
                                 {% if app.user == member.authentication %}
                                     <a href="http://www.facebook.com/sharer.php?u={{ url('member_profile', {'slug': app.user.member.slug }) }}%23{{ "cook" ~ event.id }}&title=Je vais être aux fourneaux {{ event.restaurant.name }} / {{ event.startDate |localizeddate('none', 'none', app.request.locale, null, "d-MMMM-Y") }} !"
                                        class="social"><i class="fa fa-facebook"></i></a>

@@ -28,6 +28,9 @@ cache.properties
 !app/config/payment_config/.gitkeep
 /web/robots.txt
 /app/certificates/ios-push-prod.pem
+/web/sitemap.blog.xml
+/web/sitemap.default.xml
+/web/sitemap.xml
 
 # Production ignores
 /stats/

@@ -93,6 +93,9 @@ class EventRepository extends EntityRepository
                 'events' => array(
                     Event::STATUS_APPLICANT_REGISTRATION_OPENED,
                     Event::STATUS_APPLICANT_REGISTRATION_CLOSED,
+                    Event::STATUS_RESERVATIONS_OPENED,
+                    Event::STATUS_RESERVATIONS_CLOSED,
+                    Event::STATUS_IN_PROGRESS,
                 ),
             ))
             ->orderBy('e.startDate')
@@ -737,4 +740,21 @@ class EventRepository extends EntityRepository
 
         return $qb->getQuery()->getResult();
     }
+
+
+    /**
+     * Sitemap
+     *
+     * Get all events ids
+     *
+     * @return array
+     */
+    public function getEventsIds(){
+
+        $qb = $this->createQueryBuilder('e')
+            ->select('e.id');
+
+        return $qb->getQuery()->getArrayResult();
+    }
+
 }

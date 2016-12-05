@@ -15,7 +15,7 @@
       </trans-unit>
       <trans-unit id="d8a88c0a23b488c4406a97f66d32fb60" resname="restaurateur.register.step3">
         <source>restaurateur.register.step3</source>
-        <target>Création de l'evenement</target>
+        <target>Création de l'événement</target>
       </trans-unit>
     </body>
   </file>

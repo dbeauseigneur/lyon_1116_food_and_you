@@ -97,4 +97,13 @@ class RestaurantRepository extends EntityRepository
             ->getQuery()
             ->getResult();
     }
+
+    public function getRestaurantsIds()
+    {
+        $qb = $this
+            ->createQueryBuilder('r')
+            ->select('r.id');
+
+        return $qb->getQuery()->getArrayResult();
+    }
 }

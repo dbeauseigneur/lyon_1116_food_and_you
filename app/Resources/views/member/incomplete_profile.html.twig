@@ -54,6 +54,11 @@
                 yearRange: "c-90:c",
             });
 
+
+            if($('#ui-datepicker-div').parents('hasDatepicker').length ==0 ) {
+                $('#ui-datepicker-div').wrap('<div class="hasDatepicker">');
+            }
+
             $('.fileSubmit').on('click', function () {
                 $('.fileUpload input[type="file"]').click();
 

@@ -18,7 +18,7 @@
                 </div>
                 {% endif %}
             </div>
-            <div class="col-sm-7">
+            <div class="col-sm-7 NewEvent__details">
                 <div class="box{% if form.hour.vars.errors|length > 0 %} has-error{% endif %}">
                     {{ form_label(form.hour, null, {'label_attr': {'class': 'green'}}) }}
                     {{ form_widget(form.hour) }}
@@ -168,6 +168,11 @@
                     return [true, ""];
                 }
             });
+
+
+            if($('#ui-datepicker-div').parents('hasDatepicker').length ==0 ) {
+                $('#ui-datepicker-div').wrap('<div class="hasDatepicker">');
+            }
         });
     </script>
 {% endblock %}

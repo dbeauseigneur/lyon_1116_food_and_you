@@ -34,10 +34,9 @@
                         <h1 class="h2 name">{{ restaurant.name }}</h1>
                     </div>
                     <div class="Event__social">
-                        <a target="_blank" href="https://www.instagram.com/foodandyouofficiel/" class="social"><i class="fa fa-instagram"></i></a>
-                        <a href="http://www.facebook.com/sharer.php?u={{ url('restaurant_details', {'id': restaurant.id }) }}&title=Découvrez Food%26You au {{ restaurant.name }} !"
+                        <a href="http://www.facebook.com/sharer.php?u={{ url('restaurant_details', {'slug': restaurant.slug }) }}&title=Découvrez Food%26You au {{ restaurant.name }} !"
                            class="social"><i class="fa fa-facebook"></i></a>
-                        <a href="https://twitter.com/share?url={{ url('restaurant_details', {'id': restaurant.id }) }}&text=Découvrez Food%26You au {{ restaurant.name }} !"
+                        <a href="https://twitter.com/share?url={{ url('restaurant_details', {'slug': restaurant.slug }) }}&text=Découvrez Food%26You au {{ restaurant.name }} !"
                            class="social"><i class="fa fa-twitter"></i></a>
                     </div>
                 </div>

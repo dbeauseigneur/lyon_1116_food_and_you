@@ -95,7 +95,7 @@
       </trans-unit>
       <trans-unit id="f39adcf37902bdcb747ecbf11983a6b0" resname="error.no_reservation">
         <source>error.no_reservation</source>
-        <target><![CDATA[Le membre Food & You possédant ce code n'a pas encore une réservation pour cet événement.]]></target>
+        <target><![CDATA[Le membre Food and You possédant ce code n'a pas encore une réservation pour cet événement.]]></target>
       </trans-unit>
       <trans-unit id="be71006fc8fdd32e680ca539a86d47d6" resname="reserve.place">
         <source>reserve.place</source>
@@ -131,7 +131,7 @@
       </trans-unit>
       <trans-unit id="c3eaa8676ee19480809ab4e68b0ef876" resname="photo.gallery.description">
         <source>photo.gallery.description</source>
-        <target><![CDATA[<p>Revivez votre soirée food & you !</p><p>Retrouvez vos meilleurs</p>]]></target>
+        <target><![CDATA[<p>Revivez votre soirée Food and You !</p><p>Retrouvez vos meilleurs</p>]]></target>
       </trans-unit>
       <trans-unit id="b66e0880ae0d83b3e5bf6ecc6705be1d" resname="photos.notfound">
         <source>photos.notfound</source>

@@ -7,7 +7,7 @@
     <body>
       <trans-unit id="ae2c362801617fa469468e36983e6e79" resname="welcome.to.my.page">
         <source>welcome.to.my.page</source>
-        <target><![CDATA[Bienvenue sur ma page profil Food & You]]></target>
+        <target><![CDATA[Bienvenue sur ma page profil Food and You]]></target>
       </trans-unit>
       <trans-unit id="8748b3802aa69e6236db60f243dbbba5" resname="participations">
         <source>participations</source>
@@ -31,7 +31,7 @@
       </trans-unit>
       <trans-unit id="4d5b3879684c3640245ce2b151ad42b5" resname="member.applicant-current-recipe.title">
         <source>member.applicant-current-recipe.title</source>
-        <target>Votez pour moi</target>
+        <target>Encouragez moi !</target>
       </trans-unit>
       <trans-unit id="d59685bde29e9c050c750900a77acaeb" resname="member.applicant-current-recipe.subtitle">
         <source>member.applicant-current-recipe.subtitle</source>
@@ -47,11 +47,11 @@
       </trans-unit>
       <trans-unit id="d4ce73238c296ea290d949658c74a3d2" resname="member.applicant-current-recipe.votes">
         <source>member.applicant-current-recipe.votes</source>
-        <target>{0}votes|{1}vote|[2,Inf]votes</target>
+        <target>{0}like|{1}like|[2,Inf]likes</target>
       </trans-unit>
       <trans-unit id="60118da790d301b5009098e4b51c071c" resname="member.applicant-current-recipe.vote.me">
         <source>member.applicant-current-recipe.vote.me</source>
-        <target>Votez pour moi !</target>
+        <target>J'AIME !</target>
       </trans-unit>
       <trans-unit id="adc29a27c3fe14314a4b4d5ee1e7e633" resname="jy.etais">
         <source>jy.etais</source>

@@ -31,8 +31,7 @@ class MemberRepository extends EntityRepository
             ->innerJoin('m.reservations', 'r')
             ->innerJoin('r.event', 'e')
             ->where('e = :event')
-            ->setParameter('event', $event)
-        ;
+            ->setParameter('event', $event);
 
         return $qb->getQuery()->getResult();
     }
@@ -49,8 +48,7 @@ class MemberRepository extends EntityRepository
             ->createQueryBuilder('m')
             ->select('m')
             ->where('m.tableCode = :code')
-            ->setParameter('code', $tableCode)
-        ;
+            ->setParameter('code', $tableCode);
 
         return $qb->getQuery()->getOneOrNullResult();
     }
@@ -106,6 +104,21 @@ class MemberRepository extends EntityRepository
             ->where('m.firstName LIKE :query')
             ->orWhere('m.lastName LIKE :query')
             ->setParameter('query', $query);
+
+        return $qb->getQuery()->getArrayResult();
+    }
+
+    /**
+     * Sitemap
+     *
+     * Get all member slugs
+     * @return array
+     */
+    public function getAllSlugs()
+    {
+        $qb = $this
+            ->createQueryBuilder('m')
+            ->select('m.slug');
 
         return $qb->getQuery()->getArrayResult();
     }
