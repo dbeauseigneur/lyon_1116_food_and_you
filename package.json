@@ -1,10 +1,12 @@
 {
   "name": "foodandyou",
   "version": "1.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "del": "^2.2.2"
+  },
   "devDependencies": {
     "del": "^2.1.0",
-    "gulp": "^3.9.0",
+    "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-clean": "^0.3.1",
     "gulp-concat": "^2.6.0",
@@ -17,5 +19,23 @@
   },
   "engines": {
     "node": ">=0.8.0"
-  }
+  },
+  "description": "Food and You =========================================",
+  "main": "gulpfile.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WildCodeSchool/lyon_1116_food_and_you.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WildCodeSchool/lyon_1116_food_and_you/issues"
+  },
+  "homepage": "https://github.com/WildCodeSchool/lyon_1116_food_and_you#readme"
 }
