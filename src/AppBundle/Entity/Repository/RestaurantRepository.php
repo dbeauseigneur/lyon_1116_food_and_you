@@ -106,4 +106,13 @@ class RestaurantRepository extends EntityRepository
 
         return $qb->getQuery()->getArrayResult();
     }
+
+    public function getRestaurantsSlugs()
+    {
+        $qb = $this
+            ->createQueryBuilder('r')
+            ->select('r.slug');
+
+        return $qb->getQuery()->getArrayResult();
+    }
 }

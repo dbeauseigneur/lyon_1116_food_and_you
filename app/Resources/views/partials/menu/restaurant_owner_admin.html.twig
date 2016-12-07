@@ -18,7 +18,7 @@
     </li>
     {% if app.user.member.restaurants |length > 0 %}
     <li>
-        <a href="{{ path('restaurant_details', {'id': app.user.member.restaurants.first.id}) }}">
+        <a href="{{ path('restaurant_details', {'slug': app.user.member.restaurants.first.slug}) }}">
             {{ "app.owner_admin.index.menu.restaurant.view"|trans }}
         </a>
     </li>

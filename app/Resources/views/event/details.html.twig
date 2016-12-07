@@ -38,7 +38,7 @@
                     <div class="Event__title">
                         <span class="restaurant">{{ 'restaurant' | trans({}, 'base') }}</span>
                         <h1 class="h2 name">
-                            <a href="{{ path('restaurant_details', {'id': event.restaurant.id}) }}">
+                            <a href="{{ path('restaurant_details', {'slug': event.restaurant.slug}) }}">
                                 {{ event.restaurant.name }}
                             </a>
                         </h1>

@@ -85,9 +85,9 @@ class SitemapListener implements SitemapListenerInterface
             );
         }
 
-        $restaurantsIds = $this->restaurantRepository->getRestaurantsIds();
-        foreach ($restaurantsIds as $id) {
-            $url = $this->router->generate('restaurant_details', array('id' => $id['id']), UrlGeneratorInterface::ABSOLUTE_URL);
+        $restaurantsIds = $this->restaurantRepository->getRestaurantsSlugs();
+        foreach ($restaurantsIds as $slug) {
+            $url = $this->router->generate('restaurant_details', array('id' => $slug['slug']), UrlGeneratorInterface::ABSOLUTE_URL);
             $event->getGenerator()->addUrl(
                 new UrlConcrete(
                     $url,

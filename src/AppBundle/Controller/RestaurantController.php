@@ -78,7 +78,7 @@ class RestaurantController extends Controller
      *
      * @return Response
      *
-     * @Route("/restaurants/details/{id}", name="restaurant_details")
+     * @Route("/restaurants/details/{slug}", name="restaurant_details")
      *
      */
     public function detailsAction(Request $request, Restaurant $restaurant)
@@ -87,7 +87,6 @@ class RestaurantController extends Controller
             ->get('app.repository.event')
             ->getUpcomingEvents($restaurant)
         ;
-
         return $this->render(
             ':restaurant:details.html.twig',
             array(
