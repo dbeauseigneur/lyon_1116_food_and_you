@@ -108,8 +108,8 @@
     </div>
     <div class="container-fluid" id="status_block">
         <div class="row">
-            <div class="col-sm-6 Event__reserve">
-                {% if event.status == constant('AppBundle\\Entity\\Event::STATUS_APPLICANT_REGISTRATION_OPENED') %}
+            {% if event.status == constant('AppBundle\\Entity\\Event::STATUS_APPLICANT_REGISTRATION_OPENED') %}
+                <div class="col-sm-6 Event__reserve">
                     <div>
                         <div class="text-xxlg">
                             {{ 'event.left' | trans }}
