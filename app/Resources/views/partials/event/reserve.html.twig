@@ -21,7 +21,7 @@
             </div>
             <div class="Reservation__title">
                 {% block reserve_title %}
-                    <a href="{{ path('restaurant_details', {'id': event.restaurant.id}) }}">
+                    <a href="{{ path('restaurant_details', {'slug': event.restaurant.slug}) }}">
                         <h3 class="h5">{{ event.restaurant.name }}</h3>
                     </a>
                     <address>{{ event.restaurant.street }}, {{ event.restaurant.city }}</address>
@@ -42,7 +42,7 @@
                         </a>
                     {% endif %}
                 {% else %}
-                    <a class="Btn green xs border-white" href="{{ path('event_details', {'id': event.id}) }}">
+                    <a class="Btn green xs border-white" href="{{ path('event_details', {'id': event.slug}) }}">
                         {{ block('reserve_button_label') }}
                     </a>
                 {% endif %}

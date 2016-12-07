@@ -38,7 +38,7 @@
                     <div class="Event__title">
                         <span class="restaurant">{{ 'restaurant' | trans({}, 'base') }}</span>
                         <h1 class="h2 name">
-                            <a href="{{ path('restaurant_details', {'id': event.restaurant.id}) }}">
+                            <a href="{{ path('restaurant_details', {'slug': event.restaurant.slug}) }}">
                                 {{ event.restaurant.name }}
                             </a>
                         </h1>
@@ -108,8 +108,8 @@
     </div>
     <div class="container-fluid" id="status_block">
         <div class="row">
-            <div class="col-sm-6 Event__reserve">
-                {% if event.status == constant('AppBundle\\Entity\\Event::STATUS_APPLICANT_REGISTRATION_OPENED') %}
+            {% if event.status == constant('AppBundle\\Entity\\Event::STATUS_APPLICANT_REGISTRATION_OPENED') %}
+                <div class="col-sm-6 Event__reserve">
                     <div>
                         <div class="text-xxlg">
                             {{ 'event.left' | trans }}

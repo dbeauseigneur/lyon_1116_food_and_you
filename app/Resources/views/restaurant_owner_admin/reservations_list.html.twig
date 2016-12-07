@@ -27,7 +27,7 @@
                     <tr>
                         <td>
                             {% if reservation.tableOwner %}
-                                {{ reservation.tableOwner.tableCode }}
+                                {{ reservation.tableOwner.firstName }}
                             {% endif %}
                         </td>
                         <td>{{ reservation.member.firstName}}</td>

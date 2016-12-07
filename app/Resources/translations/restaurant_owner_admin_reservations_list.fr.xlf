@@ -11,7 +11,7 @@
       </trans-unit>
       <trans-unit id="dd41fae1e5cad34ddabbd55507303ed1" resname="app.owner_admin.reservations.list.head.table_code">
         <source>app.owner_admin.reservations.list.head.table_code</source>
-        <target>Table</target>
+        <target>Table supporter</target>
       </trans-unit>
       <trans-unit id="fa209863cc5032f5fb84771179dd244e" resname="app.owner_admin.reservations.list.head.firstname">
         <source>app.owner_admin.reservations.list.head.firstname</source>
