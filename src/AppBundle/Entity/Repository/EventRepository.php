@@ -69,6 +69,7 @@ class EventRepository extends EntityRepository
                     'statuses',
                     array(
                         Event::STATUS_APPLICANT_REGISTRATION_OPENED,
+                        Event::STATUS_APPLICANT_REGISTRATION_CLOSED,
                         Event::STATUS_RESERVATIONS_OPENED,
                     )
                 );
